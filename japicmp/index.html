@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20151017" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>japicmp-base - About</title>
+    <title>japicmp-base - </title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.4.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -55,7 +55,7 @@
         japicmp</a>
                     <span class="divider">/</span>
       </li>
-        <li class="active ">About</li>
+        <li class="active "></li>
         
                 
                     
@@ -83,12 +83,10 @@
                 <ul class="nav nav-list">
                     <li class="nav-header">Overview</li>
                               
-      <li>
+      <li class="active">
   
-                          <a href="Introduction.html" title="Introduction">
-          <span class="none"></span>
-        Introduction</a>
-            </li>
+            <a href="#"><span class="none"></span>Introduction</a>
+          </li>
                 
       <li>
   
@@ -223,25 +221,73 @@
                 
         <div id="bodyColumn"  class="span10" >
                                   
-            <div class="section">
-<h2>About japicmp-base<a name="About_japicmp-base"></a></h2><a name="About_japicmp-base"></a>
-<p>japicmp is a library/maven plugin that computes the differences between two
-        versions of a jar file/artifact in order to ease the API documentation for clients/customers.</p>
+            <h1>japicmp</h1>
+<p>japicmp is a tool to compare two versions of a jar archive:</p>
+
+<div class="source"><pre class="prettyprint">java -jar japicmp-0.6.0-jar-with-dependencies.jar -n new-version.jar -o old-version.jar
+</pre></div>
+<p>It can also be used as a library:</p>
+
+<div class="source"><pre class="prettyprint">JarArchiveComparatorOptions comparatorOptions = new JarArchiveComparatorOptions();
+JarArchiveComparator jarArchiveComparator = new JarArchiveComparator(comparatorOptions);
+List&lt;JApiClass&gt; jApiClasses = jarArchiveComparator.compare(oldArchives, newArchives);
+</pre></div>
+<p>japicmp is available in the Maven Central Repository:</p>
+
+<div class="source"><pre class="prettyprint">&lt;dependency&gt;
+    &lt;groupId&gt;com.github.siom79.japicmp&lt;/groupId&gt;
+    &lt;artifactId&gt;japicmp&lt;/artifactId&gt;
+    &lt;version&gt;0.6.0&lt;/version&gt;
+&lt;/dependency&gt;
+</pre></div>
 <div class="section">
-<h3>Project Modules<a name="Project_Modules"></a></h3><a name="Project_Modules"></a>
-<p>This project has declared the following modules:</p>
-<table border="0" class="table table-striped">
-<tr class="a">
-<th>Name</th>
-<th>Description</th></tr>
-<tr class="b">
-<td><a href="japicmp/index.html">japicmp</a></td>
-<td>japicmp is a library that computes the differences between two
-        versions of a jar file/artifact in order to ease the API documentation for clients/customers.</td></tr>
-<tr class="b">
-<td><a href="japicmp-maven-plugin/index.html">japicmp-maven-plugin</a></td>
-<td>japicmp-maven-plugin is a maven plugin that computes the differences between two
-        versions of a jar file/artifact in order to ease the API documentation for clients/customers.</td></tr></table></div></div>
+<h2>Motivation<a name="Motivation"></a></h2>
+<p>Every time you release a new version of a library or a product, you have to tell your clients or customers what has changed in comparison to the last release. Without the appropriate tooling, this task is tedious and error-prone. This tool/library helps you to determine the differences between the java class files that are contained in two given jar archives.</p>
+<p>This library does not use the Java Reflection API to compute the differences, as the usage of the Reflection API makes it necessary to include all classes the jar archive under investigation depends on are available on the classpath. To prevent the inclusion of all dependencies, which can be a lot of work for bigger applications, this library makes use of the <a class="externalLink" href="http://www.csg.ci.i.u-tokyo.ac.jp/~chiba/javassist/">javassist</a> library to inspect the class files. This way you only have to provide the two jar archives on the command line (and eventually libraries that contain classes/interfaces you have extended/implemented).</p>
+<p>This approach also detects changes in instrumented and generated classes. You can even evaluate changes in class file attributes (like synthetic) or annotations. The comparison of annotations makes this approach suitable for annotation-based APIs like JAXB, JPA, JAX-RS, etc.</p></div>
+<div class="section">
+<h2>Features<a name="Features"></a></h2>
+
+<ul>
+  
+<li>Comparison of two jar archives without the need to add all of their dependencies to the classpath.</li>
+  
+<li>Differences are printed on the command line in a simple diff format.</li>
+  
+<li>Differences can optionally be printed as XML or HTML file.</li>
+  
+<li>Per default private and package protected classes and class members are not compared. If necessary, the access modifier of the classes and class members to be  compared can be set to public, protected, package or private.</li>
+  
+<li>Per default all classes are tracked. If necessary, certain packages, classes, methods or fields can be excluded or explicitly included.</li>
+  
+<li>All changes between all classes/methods/fields are compared. If necessary, output can be limited to changes that are binary incompatible (as described in the <a class="externalLink" href="http://docs.oracle.com/javase/specs/jls/se7/html/jls-13.html">Java Language Specification</a>).</li>
+  
+<li>All changes between annotations are compared, hence japicmp can be used to track annotation-based APIs like JAXB, JPA, JAX-RS, etc.</li>
+  
+<li>A maven plugin is available that allows you to compare the current artifact version with some older version from the repository.</li>
+  
+<li>The option <tt>--semantic-versioning</tt> tells you which part of the version you have to increment in order to follow <a class="externalLink" href="http://semver.org/">semantic versioning</a>.</li>
+  
+<li>If a class is serializable, changes are evaluated regarding the <a class="externalLink" href="http://docs.oracle.com/javase/7/docs/platform/serialization/spec/serialTOC.html">Java Object Serialization Specification</a>.</li>
+  
+<li>Per default synthetic classes and class members (e.g. <a class="externalLink" href="https://docs.oracle.com/javase/tutorial/java/generics/bridgeMethods.html">bridge methods</a>) are hidden. They can be listed by using the option <tt>--include-synthetic</tt>.</li>
+</ul>
+<p><a class="externalLink" href="https://github.com/melix">melix</a> has developed a <a class="externalLink" href="https://github.com/melix/japicmp-gradle-plugin">gradle plugin</a> for japicmp.</p></div>
+<div class="section">
+<h2>Downloads<a name="Downloads"></a></h2>
+<p>You can download the latest version from the <a class="externalLink" href="https://github.com/siom79/japicmp/releases">release page</a> or directly from the <a class="externalLink" href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22japicmp%22">maven central repository</a>.</p></div>
+<div class="section">
+<h2>Related work<a name="Related_work"></a></h2>
+<p>The following projects have related goals:</p>
+
+<ul>
+  
+<li><a class="externalLink" href="http://ispras.linuxbase.org/index.php/Java_API_Compliance_Checker">Java API Compliance Checker</a>: A Perl script that uses javap to compare two jar archives. This approach cannot compare annotations and you need to have Perl installed.</li>
+  
+<li><a class="externalLink" href="http://clirr.sourceforge.net/">Clirr</a>: A tool written in Java that compares two libraries for binary compatibility. Tracking of API changes is implemented only partially, tracking of annotations is not supported.</li>
+  
+<li><a class="externalLink" href="http://javadiff.sourceforge.net/">JDiff</a>: A Javadoc doclet that generates an HTML report of all API changes. The source code for both versions has to be available, the differences are not distinguished between binary incompatible or not. Comparison of annotations is not supported.</li>
+</ul></div>
                   </div>
             </div>
           </div>

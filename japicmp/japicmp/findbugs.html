@@ -166,7 +166,7 @@
 <th>Missing Classes</th></tr>
 <tr class="b">
 <td>136</td>
-<td>7</td>
+<td>8</td>
 <td>0</td>
 <td>0</td></tr></table></div>
 <div class="section">
@@ -191,21 +191,24 @@
 <td><a href="#japicmp.model.JavaObjectSerializationCompatibility">japicmp.model.JavaObjectSerializationCompatibility</a></td>
 <td>1</td></tr>
 <tr class="a">
-<td><a href="#japicmp.output.semver.SemverOut">japicmp.output.semver.SemverOut</a></td>
+<td><a href="#japicmp.output.extapi.jpa.model.JpaTable">japicmp.output.extapi.jpa.model.JpaTable</a></td>
 <td>1</td></tr>
 <tr class="b">
+<td><a href="#japicmp.output.semver.SemverOut">japicmp.output.semver.SemverOut</a></td>
+<td>1</td></tr>
+<tr class="a">
 <td><a href="#japicmp.output.xml.XmlOutputGenerator">japicmp.output.xml.XmlOutputGenerator</a></td>
 <td>1</td></tr></table></div><a name="japicmp.cmp.JarArchiveComparator"></a>
 <div class="section">
 <h3>japicmp.cmp.JarArchiveComparator<a name="japicmp.cmp.JarArchiveComparator"></a></h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>japicmp.cmp.JarArchiveComparator.appendUserDefinedClassPathEntries(ClassPool, List) concatenates strings using + in a loop</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SBSC_USE_STRINGBUFFER_CONCATENATION">SBSC_USE_STRINGBUFFER_CONCATENATION</a></td>
@@ -214,13 +217,13 @@
 <div class="section">
 <h3>japicmp.model.JApiAnnotation<a name="japicmp.model.JApiAnnotation"></a></h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>japicmp.model.JApiAnnotation.computeElements(List, Optional, Optional) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
@@ -229,13 +232,13 @@
 <div class="section">
 <h3>japicmp.model.JApiAnnotationElementValue<a name="japicmp.model.JApiAnnotationElementValue"></a></h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>japicmp.model.JApiAnnotationElementValue defines equals and uses Object.hashCode()</td>
 <td>BAD_PRACTICE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#HE_EQUALS_USE_HASHCODE">HE_EQUALS_USE_HASHCODE</a></td>
@@ -244,13 +247,13 @@
 <div class="section">
 <h3>japicmp.model.JApiClass<a name="japicmp.model.JApiClass"></a></h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>japicmp.model.JApiClass.sortMethodsIntoLists(Map, Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
@@ -259,28 +262,43 @@
 <div class="section">
 <h3>japicmp.model.JavaObjectSerializationCompatibility<a name="japicmp.model.JavaObjectSerializationCompatibility"></a></h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>Exception is caught when Exception is not thrown in japicmp.model.JavaObjectSerializationCompatibility.computeSerialVersionUid(JarArchiveComparatorOptions, Optional, JarArchiveComparator)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#REC_CATCH_EXCEPTION">REC_CATCH_EXCEPTION</a></td>
 <td>56</td>
-<td>Medium</td></tr></table></div><a name="japicmp.output.semver.SemverOut"></a>
+<td>Medium</td></tr></table></div><a name="japicmp.output.extapi.jpa.model.JpaTable"></a>
 <div class="section">
-<h3>japicmp.output.semver.SemverOut<a name="japicmp.output.semver.SemverOut"></a></h3>
+<h3>japicmp.output.extapi.jpa.model.JpaTable<a name="japicmp.output.extapi.jpa.model.JpaTable"></a></h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
+<tr class="a">
+<td>Dead store to jpaAttribute in japicmp.output.extapi.jpa.model.JpaTable.extractAttributes()</td>
+<td>STYLE</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE</a></td>
+<td>97</td>
+<td>Medium</td></tr></table></div><a name="japicmp.output.semver.SemverOut"></a>
+<div class="section">
+<h3>japicmp.output.semver.SemverOut<a name="japicmp.output.semver.SemverOut"></a></h3>
+<table border="0" class="table table-striped">
 <tr class="b">
+<th>Bug</th>
+<th>Category</th>
+<th>Details</th>
+<th>Line</th>
+<th>Priority</th></tr>
+<tr class="a">
 <td>Nullcheck of changeStatus at line 81 of value previously dereferenced in japicmp.output.semver.SemverOut.signs(JApiHasChangeStatus)</td>
 <td>CORRECTNESS</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE</a></td>
@@ -289,13 +307,13 @@
 <div class="section">
 <h3>japicmp.output.xml.XmlOutputGenerator<a name="japicmp.output.xml.XmlOutputGenerator"></a></h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>Dead store to jpaEntities in japicmp.output.xml.XmlOutputGenerator.analyzeJpaAnnotations(JApiCmpXmlRoot, List)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE</a></td>
