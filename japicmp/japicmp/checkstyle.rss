@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2015</copyright>
     <item>
-      <title>File: 81,
-             Errors: 6927,
+      <title>File: 84,
+             Errors: 7222,
              Warnings: 0,
              Infos: 0
       </title>
@@ -55,7 +55,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  483
+                  547
                 </td>
               </tr>
                           <tr>
@@ -237,7 +237,21 @@ under the License.
                   0
                 </td>
                 <td>
-                  164
+                  158
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.JApiHasLineNumber.java">japicmp/model/JApiHasLineNumber.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
                 </td>
               </tr>
                           <tr>
@@ -265,7 +279,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  60
+                  59
                 </td>
               </tr>
                           <tr>
@@ -466,6 +480,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#logging.properties">logging.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.AbstractModifier.java">japicmp/model/AbstractModifier.java</a>
                 </td>
                 <td>
@@ -629,7 +657,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  289
+                  307
                 </td>
               </tr>
                           <tr>
@@ -643,7 +671,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  80
+                  183
                 </td>
               </tr>
                           <tr>
@@ -699,7 +727,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  286
+                  295
                 </td>
               </tr>
                           <tr>
@@ -713,7 +741,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  67
+                  71
                 </td>
               </tr>
                           <tr>
@@ -797,7 +825,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  221
+                  223
                 </td>
               </tr>
                           <tr>
@@ -938,6 +966,20 @@ under the License.
                 </td>
                 <td>
                   3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.output.xml.XmlOutputGeneratorOptions.java">japicmp/output/xml/XmlOutputGeneratorOptions.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  46
                 </td>
               </tr>
                           <tr>
@@ -1161,7 +1203,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  189
+                  235
                 </td>
               </tr>
                           <tr>

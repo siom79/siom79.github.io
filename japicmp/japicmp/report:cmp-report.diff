@@ -1,106 +1,53 @@
-Comparing /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.5.3/japicmp-0.5.3.jar with /home/mmois/Programmierung/japicmp/japicmp/target/japicmp-0.6.1-SNAPSHOT.jar:
-+++  NEW ENUM: PUBLIC(+) STATIC(+) FINAL(+) japicmp.cli.JApiCli$ClassPathMode  (compatible)
-	+++  NEW SUPERCLASS: java.lang.Enum
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.cli.JApiCli$ClassPathMode ONE_COMMON_CLASSPATH
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.cli.JApiCli$ClassPathMode TWO_SEPARATE_CLASSPATHS
-	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.cli.JApiCli$ClassPathMode valueOf(java.lang.String)
-	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.cli.JApiCli$ClassPathMode[] values()
-***  MODIFIED CLASS: PUBLIC STATIC japicmp.cli.JApiCli$Compare  (not serializable)
-	===  UNCHANGED FIELD: PUBLIC java.lang.String pathToOldVersionJar
-		***  MODIFIED ANNOTATION: io.airlift.airline.Option
-			***  MODIFIED ELEMENT: description=Provides the path to the old version(s) of the jar(s). Use ; to separate jar files. (<- Provides the path to the old version of the jar.)
-			===  UNCHANGED ELEMENT: name=-o,--old
-	===  UNCHANGED FIELD: PUBLIC java.lang.String pathToNewVersionJar
-		***  MODIFIED ANNOTATION: io.airlift.airline.Option
-			***  MODIFIED ELEMENT: description=Provides the path to the new version(s) of the jar(s). Use ; to separate jar files. (<- Provides the path to the new version of the jar.)
-			===  UNCHANGED ELEMENT: name=-n,--new
-	+++  NEW FIELD: PUBLIC(+) java.lang.String oldClassPath
-		+++  NEW ANNOTATION: io.airlift.airline.Option
-			+++  NEW ELEMENT: description=The classpath for the old version. (+)
-			+++  NEW ELEMENT: name=--old-classpath (+)
-	+++  NEW FIELD: PUBLIC(+) java.lang.String newClassPath
-		+++  NEW ANNOTATION: io.airlift.airline.Option
-			+++  NEW ELEMENT: description=The classpath for the new version. (+)
-			+++  NEW ELEMENT: name=--new-classpath (+)
-***! MODIFIED CLASS: PUBLIC japicmp.cmp.JarArchiveComparator  (not serializable)
-	+++  NEW METHOD: PUBLIC(+) java.util.List compare(java.util.List, java.util.List)
-	---! REMOVED METHOD: PUBLIC(-) java.lang.String getClasspath()
-	---! REMOVED METHOD: PUBLIC(-) javassist.ClassPool getClassPool()
-	+++  NEW METHOD: PUBLIC(+) java.lang.String getCommonClasspathAsString()
-	+++  NEW METHOD: PUBLIC(+) javassist.ClassPool getCommonClassPool()
-	+++  NEW METHOD: PUBLIC(+) java.lang.String getNewClassPathAsString()
-	+++  NEW METHOD: PUBLIC(+) java.lang.String getOldClassPathAsString()
-***  MODIFIED CLASS: PUBLIC japicmp.cmp.JarArchiveComparatorOptions  (not serializable)
-	+++  NEW METHOD: PUBLIC(+) japicmp.cmp.JarArchiveComparatorOptions$ClassPathMode getClassPathMode()
-	+++  NEW METHOD: PUBLIC(+) java.util.List getNewClassPath()
-	+++  NEW METHOD: PUBLIC(+) java.util.List getOldClassPath()
-	+++  NEW METHOD: PUBLIC(+) void setClassPathMode(japicmp.cmp.JarArchiveComparatorOptions$ClassPathMode)
-	+++  NEW METHOD: PUBLIC(+) void setNewClassPath(java.util.List)
-	+++  NEW METHOD: PUBLIC(+) void setOldClassPath(java.util.List)
-+++  NEW ENUM: PUBLIC(+) STATIC(+) FINAL(+) japicmp.cmp.JarArchiveComparatorOptions$ClassPathMode  (compatible)
-	+++  NEW SUPERCLASS: java.lang.Enum
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.cmp.JarArchiveComparatorOptions$ClassPathMode ONE_COMMON_CLASSPATH
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.cmp.JarArchiveComparatorOptions$ClassPathMode TWO_SEPARATE_CLASSPATHS
-	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.cmp.JarArchiveComparatorOptions$ClassPathMode valueOf(java.lang.String)
-	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.cmp.JarArchiveComparatorOptions$ClassPathMode[] values()
-***! MODIFIED CLASS: PUBLIC japicmp.config.Options  (not serializable)
-	+++  NEW METHOD: PUBLIC(+) japicmp.cli.JApiCli$ClassPathMode getClassPathMode()
-	---! REMOVED METHOD: PUBLIC(-) java.io.File getNewArchive()
-	+++  NEW METHOD: PUBLIC(+) java.util.List getNewArchives()
-	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional getNewClassPath()
-	---! REMOVED METHOD: PUBLIC(-) java.io.File getOldArchive()
-	+++  NEW METHOD: PUBLIC(+) java.util.List getOldArchives()
-	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional getOldClassPath()
-	+++  NEW METHOD: PUBLIC(+) void setClassPathMode(japicmp.cli.JApiCli$ClassPathMode)
-	---! REMOVED METHOD: PUBLIC(-) void setNewArchive(java.io.File)
-	+++  NEW METHOD: PUBLIC(+) void setNewArchives(java.util.List)
-	+++  NEW METHOD: PUBLIC(+) void setNewClassPath(com.google.common.base.Optional)
-	---! REMOVED METHOD: PUBLIC(-) void setOldArchive(java.io.File)
-	+++  NEW METHOD: PUBLIC(+) void setOldArchives(java.util.List)
-	+++  NEW METHOD: PUBLIC(+) void setOldClassPath(com.google.common.base.Optional)
-***! MODIFIED CLASS: PUBLIC japicmp.exception.JApiCmpException  (compatible)
-	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.exception.JApiCmpException forClassLoading(javassist.NotFoundException, java.lang.String, japicmp.cmp.JarArchiveComparator)
-	---! REMOVED METHOD: PUBLIC(-) STATIC(-) japicmp.exception.JApiCmpException forClassNotFound(javassist.NotFoundException, java.lang.String, japicmp.cmp.JarArchiveComparator)
+Comparing /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.6.0/japicmp-0.6.0.jar with /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.6.1.jar:
+===  UNCHANGED ENUM: PUBLIC STATIC FINAL japicmp.cli.JApiCli$ClassPathMode  (default serialVersionUID changed)
+===  UNCHANGED ENUM: PUBLIC STATIC FINAL japicmp.cmp.JarArchiveComparatorOptions$ClassPathMode  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC STATIC FINAL japicmp.exception.JApiCmpException$Reason  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.AbstractModifier  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.AccessModifier  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.BridgeModifier  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.FinalModifier  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC STATIC FINAL japicmp.model.JApiAnnotationElementValue$Type  (default serialVersionUID changed)
+***  MODIFIED CLASS: PUBLIC japicmp.model.JApiBehavior  (not serializable)
+	+++  NEW INTERFACE: japicmp.model.JApiHasLineNumber
+	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional geNewLineNumber()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getNewLineNumberAsString()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+			+++  NEW ELEMENT: name=newLineNumber (+)
+	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional getOldLineNumber()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getOldLineNumberAsString()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+			+++  NEW ELEMENT: name=oldLineNumber (+)
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.JApiChangeStatus  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC STATIC FINAL japicmp.model.JApiClassType$ClassType  (default serialVersionUID changed)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) japicmp.model.JApiHasLineNumber  (not serializable)
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) com.google.common.base.Optional geNewLineNumber()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) com.google.common.base.Optional getOldLineNumber()
 ===  UNCHANGED ENUM: PUBLIC STATIC FINAL japicmp.model.JApiJavaObjectSerializationCompatibility$JApiJavaObjectSerializationChangeStatus  (default serialVersionUID changed)
-***! MODIFIED CLASS: PUBLIC japicmp.model.JApiSuperclass  (not serializable)
-	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiSuperclass(com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus)
-	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiSuperclass(com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus, japicmp.cmp.JarArchiveComparator)
-	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional getJApiClass()
-	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional getNewSuperclassName()
-		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlTransient
-	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional getOldSuperclassName()
-		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlTransient
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.StaticModifier  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.SyntheticAttribute  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.SyntheticModifier  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.TransientModifier  (default serialVersionUID changed)
-***! MODIFIED CLASS: PUBLIC japicmp.output.stdout.StdoutOutputGenerator  (not serializable)
-	---! REMOVED CONSTRUCTOR: PUBLIC(-) StdoutOutputGenerator(japicmp.config.Options, java.util.List, java.io.File, java.io.File)
-	+++  NEW CONSTRUCTOR: PUBLIC(+) StdoutOutputGenerator(japicmp.config.Options, java.util.List)
-***  MODIFIED CLASS: PUBLIC japicmp.output.xml.XmlOutput  (not serializable)
-	+++  NEW METHOD: PUBLIC(+) japicmp.output.xml.model.JApiCmpXmlRoot getJApiCmpXmlRoot()
-	+++  NEW METHOD: PUBLIC(+) void setJApiCmpXmlRoot(japicmp.output.xml.model.JApiCmpXmlRoot)
-***! MODIFIED CLASS: PUBLIC japicmp.output.xml.XmlOutputGenerator  (not serializable)
-	---! REMOVED CONSTRUCTOR: PUBLIC(-) XmlOutputGenerator(java.lang.String, java.lang.String, java.util.List, japicmp.config.Options, boolean)
-	+++  NEW CONSTRUCTOR: PUBLIC(+) XmlOutputGenerator(java.util.List, japicmp.config.Options, boolean)
-	***! MODIFIED METHOD: PUBLIC STATIC java.util.List (<-void) writeToFiles(japicmp.config.Options, japicmp.output.xml.XmlOutput)
-+++  NEW CLASS: PUBLIC(+) japicmp.util.ListJoiner  (not serializable)
+***! MODIFIED CLASS: PUBLIC japicmp.output.semver.SemverOut  (not serializable)
+	***! MODIFIED METHOD: PUBLIC java.lang.String (<-java.lang.Void) generate()
+	---! REMOVED METHOD: PUBLIC(-) java.lang.String value()
+***  MODIFIED CLASS: PUBLIC japicmp.output.xml.model.JApiCmpXmlRoot  (not serializable)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getSemanticVersioning()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getTitle()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+	+++  NEW METHOD: PUBLIC(+) void setSemanticVersioning(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) void setTitle(java.lang.String)
+***  MODIFIED CLASS: PUBLIC japicmp.output.xml.XmlOutputGenerator  (not serializable)
+	===  UNCHANGED CONSTRUCTOR: PUBLIC XmlOutputGenerator(java.util.List, japicmp.config.Options, boolean)
+		+++  NEW ANNOTATION: java.lang.Deprecated
+	+++  NEW CONSTRUCTOR: PUBLIC(+) XmlOutputGenerator(java.util.List, japicmp.config.Options, japicmp.output.xml.XmlOutputGeneratorOptions)
++++  NEW CLASS: PUBLIC(+) japicmp.output.xml.XmlOutputGeneratorOptions  (not serializable)
 	+++  NEW SUPERCLASS: java.lang.Object
-	+++  NEW CONSTRUCTOR: PUBLIC(+) ListJoiner()
-	+++  NEW METHOD: PUBLIC(+) java.lang.String join(java.util.List)
-	+++  NEW METHOD: PUBLIC(+) japicmp.util.ListJoiner on(java.lang.String)
-	+++  NEW METHOD: PUBLIC(+) japicmp.util.ListJoiner sort(java.util.Comparator)
-	+++  NEW METHOD: PUBLIC(+) japicmp.util.ListJoiner toStringBuilder(japicmp.util.ListJoiner$ListJoinerToString)
-+++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) STATIC(+) japicmp.util.ListJoiner$ListJoinerToString  (not serializable)
-	+++  NEW SUPERCLASS: java.lang.Object
-	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String toString(java.lang.Object)
-***  MODIFIED CLASS: PUBLIC japicmp.util.OptionalHelper  (not serializable)
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String N_A
+	+++  NEW CONSTRUCTOR: PUBLIC(+) XmlOutputGeneratorOptions()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getSemanticVersioningInformation()
+	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional getTitle()
+	+++  NEW METHOD: PUBLIC(+) boolean isCreateSchemaFile()
+	+++  NEW METHOD: PUBLIC(+) void setCreateSchemaFile(boolean)
+	+++  NEW METHOD: PUBLIC(+) void setSemanticVersioningInformation(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) void setTitle(java.lang.String)
