@@ -36,39 +36,39 @@
 <tr>  <td class="numLine">&nbsp;9</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="keyword">public</span> <span class="keyword">class</span> JApiConstructor <span class="keyword">extends</span> JApiBehavior {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;10</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> <span class="keyword">final</span> Optional&lt;CtConstructor&gt; oldConstructor;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">private</span> <span class="keyword">final</span> Optional&lt;CtConstructor&gt; oldConstructor;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;11</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> <span class="keyword">final</span> Optional&lt;CtConstructor&gt; newConstructor;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">private</span> <span class="keyword">final</span> Optional&lt;CtConstructor&gt; newConstructor;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;12</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;13</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> JApiConstructor(String name, JApiChangeStatus changeStatus, Optional&lt;CtConstructor&gt; oldConstructor, Optional&lt;CtConstructor&gt; newConstructor, JarArchiveComparatorOptions options) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;14</td>  <td class="nbHitsCovered">&nbsp;56</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">super</span>(name, oldConstructor, newConstructor, changeStatus, options);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;15</td>  <td class="nbHitsCovered">&nbsp;56</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">this</span>.oldConstructor = oldConstructor;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;16</td>  <td class="nbHitsCovered">&nbsp;56</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">this</span>.newConstructor = newConstructor;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;17</td>  <td class="nbHitsCovered">&nbsp;56</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> JApiConstructor(String name, JApiChangeStatus changeStatus, Optional&lt;CtConstructor&gt; oldConstructor, Optional&lt;CtConstructor&gt; newConstructor, JarArchiveComparatorOptions options) {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;14</td>  <td class="nbHitsCovered">&nbsp;120</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">super</span>(name, oldConstructor, newConstructor, changeStatus, options);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;15</td>  <td class="nbHitsCovered">&nbsp;120</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">this</span>.oldConstructor = oldConstructor;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;16</td>  <td class="nbHitsCovered">&nbsp;120</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">this</span>.newConstructor = newConstructor;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;17</td>  <td class="nbHitsCovered">&nbsp;120</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;18</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;19</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    @XmlTransient</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        @XmlTransient</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;20</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Optional&lt;CtConstructor&gt; getNewConstructor() {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;21</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        <span class="keyword">return</span> newConstructor;</span></pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> Optional&lt;CtConstructor&gt; getNewConstructor() {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;21</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                <span class="keyword">return</span> newConstructor;</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;22</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;23</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;24</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    @XmlTransient</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        @XmlTransient</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;25</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Optional&lt;CtConstructor&gt; getOldConstructor() {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;26</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        <span class="keyword">return</span> oldConstructor;</span></pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> Optional&lt;CtConstructor&gt; getOldConstructor() {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;26</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                <span class="keyword">return</span> oldConstructor;</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;27</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;28</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;}</pre></td></tr>
 </table>
 
-<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.1.1 on 20.12.15 14:06.</div>
+<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.1.1 on 21.02.16 13:55.</div>
 </body>
 </html>

@@ -1,4 +1,7 @@
-Comparing /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.6.0/japicmp-0.6.0.jar with /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.6.2.jar:
+Comparing /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.6.0/japicmp-0.6.0.jar with /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.7.0.jar:
+***  MODIFIED CLASS: PUBLIC japicmp.cli.JApiCli  (not serializable)
+	***  MODIFIED FIELD: PUBLIC (<- PACKAGE_PROTECTED) STATIC FINAL java.lang.String OLD_CLASSPATH
+	***  MODIFIED FIELD: PUBLIC (<- PACKAGE_PROTECTED) STATIC FINAL java.lang.String NEW_CLASSPATH
 ===  UNCHANGED ENUM: PUBLIC STATIC FINAL japicmp.cli.JApiCli$ClassPathMode  (default serialVersionUID changed)
 ***  MODIFIED CLASS: PUBLIC STATIC japicmp.cli.JApiCli$Compare  (not serializable)
 	===  UNCHANGED FIELD: PUBLIC java.lang.String excludes
@@ -13,18 +16,30 @@ Comparing /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.6.0/jap
 		+++  NEW ANNOTATION: io.airlift.airline.Option
 			+++  NEW ELEMENT: description=Do not evaluate annotations. (+)
 			+++  NEW ELEMENT: name=--no-annotations (+)
+***  MODIFIED CLASS: PUBLIC japicmp.cmp.JarArchiveComparator  (not serializable)
+	+++  NEW METHOD: PUBLIC(+) javassist.ClassPool getNewClassPool()
+	+++  NEW METHOD: PUBLIC(+) javassist.ClassPool getOldClassPool()
 ***! MODIFIED CLASS: PUBLIC japicmp.cmp.JarArchiveComparatorOptions  (not serializable)
 	+++  NEW METHOD: PUBLIC(+) boolean isNoAnnotations()
 	---! REMOVED METHOD: PUBLIC(-) void setFilters(japicmp.filter.Filters)
 	+++  NEW METHOD: PUBLIC(+) void setNoAnnotations(boolean)
 ===  UNCHANGED ENUM: PUBLIC STATIC FINAL japicmp.cmp.JarArchiveComparatorOptions$ClassPathMode  (default serialVersionUID changed)
-***  MODIFIED CLASS: PUBLIC japicmp.config.Options  (not serializable)
++++  NEW CLASS: PUBLIC(+) japicmp.compat.CompatibilityChanges  (not serializable)
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW CONSTRUCTOR: PUBLIC(+) CompatibilityChanges(japicmp.cmp.JarArchiveComparator)
+	+++  NEW METHOD: PUBLIC(+) void evaluate(java.util.List)
+***! MODIFIED CLASS: PUBLIC japicmp.config.Options  (not serializable)
+	***! MODIFIED CONSTRUCTOR: PACKAGE_PROTECTED (<- PUBLIC) Options()
+	---! REMOVED METHOD: PUBLIC(-) void addClassesExcludeFromArgument(com.google.common.base.Optional)
+	---! REMOVED METHOD: PUBLIC(-) java.util.List getClassesExclude()
 	+++  NEW METHOD: PUBLIC(+) boolean isNoAnnotations()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.config.Options newDefault()
 	+++  NEW METHOD: PUBLIC(+) void setNoAnnotations(boolean)
+	+++  NEW METHOD: PUBLIC(+) void verify()
 ***! MODIFIED CLASS: PUBLIC japicmp.exception.JApiCmpException  (compatible)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.exception.JApiCmpException cliError(java.lang.String, java.lang.Object[])
 	---! REMOVED METHOD: PUBLIC(-) STATIC(-) japicmp.exception.JApiCmpException forClassLoading(javassist.NotFoundException, java.lang.String, japicmp.cmp.JarArchiveComparator)
 	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.exception.JApiCmpException forClassLoading(java.lang.Exception, java.lang.String, japicmp.cmp.JarArchiveComparator)
-	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.exception.JApiCmpException forClassLoading(java.lang.Exception, java.lang.String)
 ===  UNCHANGED ENUM: PUBLIC STATIC FINAL japicmp.exception.JApiCmpException$Reason  (default serialVersionUID changed)
 +++  NEW CLASS: PUBLIC(+) japicmp.filter.AnnotationBehaviorFilter  (not serializable)
 	+++  NEW INTERFACE: japicmp.filter.BehaviorFilter
@@ -106,14 +121,49 @@ Comparing /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.6.0/jap
 	---! REMOVED METHOD: PUBLIC(-) java.lang.String toString()
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.AbstractModifier  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.AccessModifier  (default serialVersionUID changed)
+---! REMOVED CLASS: PUBLIC(-) japicmp.model.BinaryCompatibility  (not serializable)
+	---! REMOVED SUPERCLASS: java.lang.Object
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) BinaryCompatibility()
+	---! REMOVED METHOD: PUBLIC(-) void evaluate(java.util.List)
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.BridgeModifier  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.FinalModifier  (default serialVersionUID changed)
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiAnnotation  (not serializable)
+	---! REMOVED INTERFACE: japicmp.model.JApiBinaryCompatibility
+	+++  NEW INTERFACE: japicmp.model.JApiCompatibility
+	+++  NEW METHOD: PUBLIC(+) java.util.List getCompatibilityChanges()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElementWrapper
+			+++  NEW ELEMENT: name=compatibilityChanges (+)
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElement
+			+++  NEW ELEMENT: name=compatibilityChange (+)
+	===  UNCHANGED METHOD: PUBLIC boolean isBinaryCompatible()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+	+++  NEW METHOD: PUBLIC(+) boolean isSourceCompatible()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiAnnotationElement  (not serializable)
+	---! REMOVED INTERFACE: japicmp.model.JApiBinaryCompatibility
+	+++  NEW INTERFACE: japicmp.model.JApiCompatibility
+	+++  NEW METHOD: PUBLIC(+) java.util.List getCompatibilityChanges()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElementWrapper
+			+++  NEW ELEMENT: name=compatibilityChanges (+)
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElement
+			+++  NEW ELEMENT: name=compatibilityChange (+)
+	===  UNCHANGED METHOD: PUBLIC boolean isBinaryCompatible()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+	+++  NEW METHOD: PUBLIC(+) boolean isSourceCompatible()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
 ===  UNCHANGED ENUM: PUBLIC STATIC FINAL japicmp.model.JApiAnnotationElementValue$Type  (default serialVersionUID changed)
 ***! MODIFIED CLASS: PUBLIC japicmp.model.JApiBehavior  (not serializable)
+	---! REMOVED INTERFACE: japicmp.model.JApiBinaryCompatibility
 	+++  NEW INTERFACE: japicmp.model.JApiHasLineNumber
+	+++  NEW INTERFACE: japicmp.model.JApiCompatibility
 	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiBehavior(java.lang.String, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus)
 	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiBehavior(java.lang.String, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus, japicmp.cmp.JarArchiveComparatorOptions)
 	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional geNewLineNumber()
+	+++  NEW METHOD: PUBLIC(+) java.util.List getCompatibilityChanges()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElementWrapper
+			+++  NEW ELEMENT: name=compatibilityChanges (+)
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElement
+			+++  NEW ELEMENT: name=compatibilityChange (+)
 	+++  NEW METHOD: PUBLIC(+) java.lang.String getNewLineNumberAsString()
 		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
 			+++  NEW ELEMENT: name=newLineNumber (+)
@@ -121,22 +171,108 @@ Comparing /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.6.0/jap
 	+++  NEW METHOD: PUBLIC(+) java.lang.String getOldLineNumberAsString()
 		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
 			+++  NEW ELEMENT: name=oldLineNumber (+)
+	+++  NEW METHOD: PUBLIC(+) boolean isSourceCompatible()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+---! REMOVED INTERFACE: PUBLIC(-) ABSTRACT(-) japicmp.model.JApiBinaryCompatibility  (not serializable)
+	---! REMOVED SUPERCLASS: java.lang.Object
+	---! REMOVED METHOD: PUBLIC(-) ABSTRACT(-) boolean isBinaryCompatible()
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.JApiChangeStatus  (default serialVersionUID changed)
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiClass  (not serializable)
+	---! REMOVED INTERFACE: japicmp.model.JApiBinaryCompatibility
+	+++  NEW INTERFACE: japicmp.model.JApiCompatibility
+	+++  NEW METHOD: PUBLIC(+) java.util.List getCompatibilityChanges()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElementWrapper
+			+++  NEW ELEMENT: name=compatibilityChanges (+)
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElement
+			+++  NEW ELEMENT: name=compatibilityChange (+)
+	+++  NEW METHOD: PUBLIC(+) boolean isSourceCompatible()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
 ===  UNCHANGED ENUM: PUBLIC STATIC FINAL japicmp.model.JApiClassType$ClassType  (default serialVersionUID changed)
++++* NEW INTERFACE: PUBLIC(+) ABSTRACT(+) japicmp.model.JApiCompatibility  (not serializable)
+	+++* NEW SUPERCLASS: java.lang.Object
+	+++* NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List getCompatibilityChanges()
+	+++* NEW METHOD: PUBLIC(+) ABSTRACT(+) boolean isBinaryCompatible()
+	+++* NEW METHOD: PUBLIC(+) ABSTRACT(+) boolean isSourceCompatible()
++++  NEW ENUM: PUBLIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange  (compatible)
+	+++  NEW SUPERCLASS: java.lang.Enum
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange FIELD_TYPE_CHANGED
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_REMOVED
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange CONSTRUCTOR_REMOVED
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange CONSTRUCTOR_LESS_ACCESSIBLE
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_LESS_ACCESSIBLE
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_NOW_FINAL
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange CLASS_TYPE_CHANGED
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange CLASS_NOW_CHECKED_EXCEPTION
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_IS_STATIC_AND_OVERRIDES_NOT_STATIC
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange FIELD_LESS_ACCESSIBLE_THAN_IN_SUPERCLASS
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange SUPERCLASS_MODIFIED_INCOMPATIBLE
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange SUPERCLASS_CHANGED
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange SUPERCLASS_ADDED
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange CLASS_NOW_FINAL
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange FIELD_LESS_ACCESSIBLE
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_LESS_ACCESSIBLE_THAN_IN_SUPERCLASS
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange FIELD_NO_LONGER_STATIC
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_NOW_ABSTRACT
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_RETURN_TYPE_CHANGED
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange SUPERCLASS_REMOVED
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange CLASS_NOW_ABSTRACT
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange CLASS_REMOVED
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange FIELD_STATIC_AND_OVERRIDES_STATIC
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange CLASS_NO_LONGER_PUBLIC
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_NOW_STATIC
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange FIELD_REMOVED
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange FIELD_NOW_STATIC
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange FIELD_NOW_FINAL
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_NO_LONGER_STATIC
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_ADDED_TO_INTERFACE
+	+++  NEW METHOD: PUBLIC(+) boolean isBinaryCompatible()
+	+++  NEW METHOD: PUBLIC(+) boolean isSourceCompatible()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.model.JApiCompatibilityChange valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.model.JApiCompatibilityChange[] values()
 ***! MODIFIED CLASS: PUBLIC japicmp.model.JApiConstructor  (not serializable)
 	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiConstructor(java.lang.String, japicmp.model.JApiChangeStatus, com.google.common.base.Optional, com.google.common.base.Optional)
 	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiConstructor(java.lang.String, japicmp.model.JApiChangeStatus, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.cmp.JarArchiveComparatorOptions)
 ***! MODIFIED CLASS: PUBLIC japicmp.model.JApiField  (not serializable)
+	---! REMOVED INTERFACE: japicmp.model.JApiBinaryCompatibility
+	+++  NEW INTERFACE: japicmp.model.JApiCompatibility
 	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiField(japicmp.model.JApiChangeStatus, com.google.common.base.Optional, com.google.common.base.Optional)
 	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiField(japicmp.model.JApiChangeStatus, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.cmp.JarArchiveComparatorOptions)
-+++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) japicmp.model.JApiHasLineNumber  (not serializable)
-	+++  NEW SUPERCLASS: java.lang.Object
-	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) com.google.common.base.Optional geNewLineNumber()
-	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) com.google.common.base.Optional getOldLineNumber()
+	+++  NEW METHOD: PUBLIC(+) java.util.List getCompatibilityChanges()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElementWrapper
+			+++  NEW ELEMENT: name=compatibilityChanges (+)
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElement
+			+++  NEW ELEMENT: name=compatibilityChange (+)
+	+++  NEW METHOD: PUBLIC(+) boolean isSourceCompatible()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
++++* NEW INTERFACE: PUBLIC(+) ABSTRACT(+) japicmp.model.JApiHasLineNumber  (not serializable)
+	+++* NEW SUPERCLASS: java.lang.Object
+	+++* NEW METHOD: PUBLIC(+) ABSTRACT(+) com.google.common.base.Optional geNewLineNumber()
+	+++* NEW METHOD: PUBLIC(+) ABSTRACT(+) com.google.common.base.Optional getOldLineNumber()
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiImplementedInterface  (not serializable)
+	---! REMOVED INTERFACE: japicmp.model.JApiBinaryCompatibility
+	+++  NEW INTERFACE: japicmp.model.JApiCompatibility
+	+++  NEW METHOD: PUBLIC(+) java.util.List getCompatibilityChanges()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElementWrapper
+			+++  NEW ELEMENT: name=compatibilityChanges (+)
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElement
+			+++  NEW ELEMENT: name=compatibilityChange (+)
+	+++  NEW METHOD: PUBLIC(+) boolean isSourceCompatible()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+	+++  NEW METHOD: PUBLIC(+) void setJApiClass(japicmp.model.JApiClass)
 ===  UNCHANGED ENUM: PUBLIC STATIC FINAL japicmp.model.JApiJavaObjectSerializationCompatibility$JApiJavaObjectSerializationChangeStatus  (default serialVersionUID changed)
 ***! MODIFIED CLASS: PUBLIC japicmp.model.JApiMethod  (not serializable)
 	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiMethod(java.lang.String, japicmp.model.JApiChangeStatus, com.google.common.base.Optional, com.google.common.base.Optional)
 	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiMethod(java.lang.String, japicmp.model.JApiChangeStatus, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.cmp.JarArchiveComparatorOptions)
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiSuperclass  (not serializable)
+	---! REMOVED INTERFACE: japicmp.model.JApiBinaryCompatibility
+	+++  NEW INTERFACE: japicmp.model.JApiCompatibility
+	+++  NEW METHOD: PUBLIC(+) java.util.List getCompatibilityChanges()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElementWrapper
+			+++  NEW ELEMENT: name=compatibilityChanges (+)
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElement
+			+++  NEW ELEMENT: name=compatibilityChange (+)
+	+++  NEW METHOD: PUBLIC(+) boolean isSourceCompatible()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.StaticModifier  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.SyntheticAttribute  (default serialVersionUID changed)
 ===  UNCHANGED ENUM: PUBLIC FINAL japicmp.model.SyntheticModifier  (default serialVersionUID changed)
