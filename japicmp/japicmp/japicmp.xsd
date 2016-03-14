@@ -210,6 +210,13 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="exceptions" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="exception" type="jApiException" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="modifiers" minOccurs="0">
         <xs:complexType>
           <xs:sequence>
@@ -231,6 +238,12 @@
     <xs:attribute name="newLineNumber" type="xs:string"/>
     <xs:attribute name="oldLineNumber" type="xs:string"/>
     <xs:attribute name="sourceCompatible" type="xs:boolean" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="jApiException">
+    <xs:sequence/>
+    <xs:attribute name="changeStatus" type="jApiChangeStatus"/>
+    <xs:attribute name="name" type="xs:string"/>
   </xs:complexType>
 
   <xs:complexType name="jApiModifier">
@@ -371,6 +384,8 @@
       <xs:enumeration value="SUPERCLASS_CHANGED"/>
       <xs:enumeration value="SUPERCLASS_ADDED"/>
       <xs:enumeration value="SUPERCLASS_MODIFIED_INCOMPATIBLE"/>
+      <xs:enumeration value="INTERFACE_ADDED"/>
+      <xs:enumeration value="INTERFACE_REMOVED"/>
       <xs:enumeration value="METHOD_REMOVED"/>
       <xs:enumeration value="METHOD_LESS_ACCESSIBLE"/>
       <xs:enumeration value="METHOD_LESS_ACCESSIBLE_THAN_IN_SUPERCLASS"/>
@@ -381,6 +396,9 @@
       <xs:enumeration value="METHOD_NOW_STATIC"/>
       <xs:enumeration value="METHOD_NO_LONGER_STATIC"/>
       <xs:enumeration value="METHOD_ADDED_TO_INTERFACE"/>
+      <xs:enumeration value="METHOD_NOW_THROWS_CHECKED_EXCEPTION"/>
+      <xs:enumeration value="METHOD_ABSTRACT_ADDED_TO_CLASS"/>
+      <xs:enumeration value="METHOD_ABSTRACT_ADDED_IN_SUPERCLASS"/>
       <xs:enumeration value="FIELD_STATIC_AND_OVERRIDES_STATIC"/>
       <xs:enumeration value="FIELD_LESS_ACCESSIBLE_THAN_IN_SUPERCLASS"/>
       <xs:enumeration value="FIELD_NOW_FINAL"/>
