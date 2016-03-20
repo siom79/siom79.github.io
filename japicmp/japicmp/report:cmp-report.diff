@@ -1,8 +1,10 @@
-Comparing /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.7.0/japicmp-0.7.0.jar with /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.7.1.jar:
+Comparing /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.7.0/japicmp-0.7.0.jar with /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.7.2.jar:
 ===  UNCHANGED ENUM: PUBLIC STATIC FINAL japicmp.cli.JApiCli$ClassPathMode  (default serialVersionUID changed)
 ***  MODIFIED CLASS: PUBLIC japicmp.cmp.JarArchiveComparator  (not serializable)
 	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional loadClass(japicmp.cmp.JarArchiveComparator$ArchiveType, java.lang.String)
 +++  NEW ENUM: PUBLIC(+) STATIC(+) FINAL(+) japicmp.cmp.JarArchiveComparator$ArchiveType  (compatible)
+	+++  NEW INTERFACE: java.lang.Comparable
+	+++  NEW INTERFACE: java.io.Serializable
 	+++  NEW SUPERCLASS: java.lang.Enum
 	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.cmp.JarArchiveComparator$ArchiveType NEW
 	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.cmp.JarArchiveComparator$ArchiveType OLD
