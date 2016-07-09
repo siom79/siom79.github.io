@@ -1,5 +1,2 @@
-Comparing /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.7.2/japicmp-0.7.2.jar with /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.8.0.jar:
-***  MODIFIED ENUM: PUBLIC FINAL japicmp.model.JApiCompatibilityChange  (compatible)
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange FIELD_REMOVED_IN_SUPERCLASS
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_ABSTRACT_ADDED_IN_IMPLEMENTED_INTERFACE
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_REMOVED_IN_SUPERCLASS
+Comparing /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.8.0/japicmp-0.8.0.jar with /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.8.1.jar:
+No changes.
