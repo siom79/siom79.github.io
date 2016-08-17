@@ -12,10 +12,12 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="titleOptional" type="optional" minOccurs="0"/>
     </xs:sequence>
     <xs:attribute name="accessModifier" type="xs:string"/>
     <xs:attribute name="creationTimestamp" type="xs:string"/>
     <xs:attribute name="ignoreMissingClasses" type="xs:boolean" use="required"/>
+    <xs:attribute name="ignoreMissingClassesByRegularExpressions" type="xs:string"/>
     <xs:attribute name="newJar" type="xs:string"/>
     <xs:attribute name="oldJar" type="xs:string"/>
     <xs:attribute name="onlyBinaryIncompatibleModifications" type="xs:boolean" use="required"/>
@@ -361,6 +363,10 @@
     <xs:attribute name="sourceCompatible" type="xs:boolean" use="required"/>
     <xs:attribute name="superclassNew" type="xs:string"/>
     <xs:attribute name="superclassOld" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="optional" abstract="true">
+    <xs:sequence/>
   </xs:complexType>
 
   <xs:simpleType name="jApiChangeStatus">

@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 93,
-             Errors: 4092,
+      <title>File: 94,
+             Errors: 4175,
              Warnings: 0,
              Infos: 0
       </title>
@@ -55,7 +55,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  84
+                  99
                 </td>
               </tr>
                           <tr>
@@ -125,7 +125,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  41
+                  42
                 </td>
               </tr>
                           <tr>
@@ -153,7 +153,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  104
+                  112
                 </td>
               </tr>
                           <tr>
@@ -167,7 +167,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  209
+                  214
                 </td>
               </tr>
                           <tr>
@@ -223,7 +223,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  219
+                  224
                 </td>
               </tr>
                           <tr>
@@ -349,7 +349,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  29
+                  34
                 </td>
               </tr>
                           <tr>
@@ -391,7 +391,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  408
+                  400
                 </td>
               </tr>
                           <tr>
@@ -419,7 +419,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  162
+                  163
                 </td>
               </tr>
                           <tr>
@@ -503,7 +503,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  143
+                  145
                 </td>
               </tr>
                           <tr>
@@ -545,7 +545,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  112
+                  116
                 </td>
               </tr>
                           <tr>
@@ -573,7 +573,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  162
+                  170
                 </td>
               </tr>
                           <tr>
@@ -588,6 +588,20 @@ under the License.
                 </td>
                 <td>
                   3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.config.IgnoreMissingClasses.java">japicmp/config/IgnoreMissingClasses.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  25
                 </td>
               </tr>
                           <tr>
@@ -923,7 +937,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  431
+                  433
                 </td>
               </tr>
                           <tr>
@@ -1161,7 +1175,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  83
+                  84
                 </td>
               </tr>
                           <tr>
@@ -1217,7 +1231,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  57
+                  66
                 </td>
               </tr>
                           <tr>

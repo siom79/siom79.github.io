@@ -30,32 +30,32 @@
   <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> java.util.List;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;6</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;7</td>  <td class="nbHitsCovered">&nbsp;13</td>  <td class="src"><pre class="src">&nbsp;<span class="keyword">public</span> <span class="keyword">class</span> ListJoiner&lt;T&gt; {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;8</td>  <td class="nbHitsCovered">&nbsp;13</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">private</span> String separator = <span class="string">";"</span>;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;9</td>  <td class="nbHitsCovered">&nbsp;13</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">private</span> Comparator&lt;T&gt; comparator = <span class="keyword">null</span>;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;10</td>  <td class="nbHitsCovered">&nbsp;13</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">private</span> ListJoinerToString&lt;T&gt; toStringBuilder = <span class="keyword">null</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;7</td>  <td class="nbHitsCovered">&nbsp;15</td>  <td class="src"><pre class="src">&nbsp;<span class="keyword">public</span> <span class="keyword">class</span> ListJoiner&lt;T&gt; {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;8</td>  <td class="nbHitsCovered">&nbsp;15</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">private</span> String separator = <span class="string">";"</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;9</td>  <td class="nbHitsCovered">&nbsp;15</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">private</span> Comparator&lt;T&gt; comparator = <span class="keyword">null</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;10</td>  <td class="nbHitsCovered">&nbsp;15</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">private</span> ListJoinerToString&lt;T&gt; toStringBuilder = <span class="keyword">null</span>;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;11</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;12</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> ListJoiner&lt;T&gt; on(String separator) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;13</td>  <td class="nbHitsCovered">&nbsp;13</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">this</span>.separator = separator;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;14</td>  <td class="nbHitsCovered">&nbsp;13</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">this</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;13</td>  <td class="nbHitsCovered">&nbsp;15</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">this</span>.separator = separator;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;14</td>  <td class="nbHitsCovered">&nbsp;15</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">this</span>;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;15</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;16</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;17</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> ListJoiner&lt;T&gt; sort(Comparator&lt;T&gt; comparator) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;18</td>  <td class="nbHitsCovered">&nbsp;13</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">this</span>.comparator = comparator;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;19</td>  <td class="nbHitsCovered">&nbsp;13</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">this</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;18</td>  <td class="nbHitsCovered">&nbsp;15</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">this</span>.comparator = comparator;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;19</td>  <td class="nbHitsCovered">&nbsp;15</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">this</span>;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;20</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;21</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;22</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> ListJoiner&lt;T&gt; toStringBuilder(ListJoinerToString&lt;T&gt; listJoinerToString) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;23</td>  <td class="nbHitsCovered">&nbsp;13</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">this</span>.toStringBuilder = listJoinerToString;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;24</td>  <td class="nbHitsCovered">&nbsp;13</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">this</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;23</td>  <td class="nbHitsCovered">&nbsp;15</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">this</span>.toStringBuilder = listJoinerToString;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;24</td>  <td class="nbHitsCovered">&nbsp;15</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">this</span>;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;25</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;26</td>  <td class="nbHits">&nbsp;</td>
@@ -70,37 +70,37 @@
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;31</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> String join(List&lt;T&gt; items) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;32</td>  <td class="nbHitsUncovered"><a title="Line 32: Conditional coverage 50% (1/2).">&nbsp;16</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 32: Conditional coverage 50% (1/2).">                <span class="keyword">if</span> (<span class="keyword">this</span>.comparator != <span class="keyword">null</span>) {</a></span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;33</td>  <td class="nbHitsCovered">&nbsp;16</td>  <td class="src"><pre class="src">&nbsp;                        Collections.sort(items, <span class="keyword">this</span>.comparator);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;32</td>  <td class="nbHitsUncovered"><a title="Line 32: Conditional coverage 50% (1/2).">&nbsp;18</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 32: Conditional coverage 50% (1/2).">                <span class="keyword">if</span> (<span class="keyword">this</span>.comparator != <span class="keyword">null</span>) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;33</td>  <td class="nbHitsCovered">&nbsp;18</td>  <td class="src"><pre class="src">&nbsp;                        Collections.sort(items, <span class="keyword">this</span>.comparator);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;34</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;35</td>  <td class="nbHitsCovered">&nbsp;16</td>  <td class="src"><pre class="src">&nbsp;                StringBuilder sb = <span class="keyword">new</span> StringBuilder();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;36</td>  <td class="nbHitsCovered">&nbsp;16</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">int</span> counter = 0;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;37</td>  <td class="nbHitsCovered"><a title="Line 37: Conditional coverage 100% (2/2).">&nbsp;16</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 37: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (T item : items) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;38</td>  <td class="nbHitsUncovered"><a title="Line 38: Conditional coverage 50% (1/2).">&nbsp;2</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 38: Conditional coverage 50% (1/2).">                        <span class="keyword">if</span> (item == <span class="keyword">null</span>) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;35</td>  <td class="nbHitsCovered">&nbsp;18</td>  <td class="src"><pre class="src">&nbsp;                StringBuilder sb = <span class="keyword">new</span> StringBuilder();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;36</td>  <td class="nbHitsCovered">&nbsp;18</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">int</span> counter = 0;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;37</td>  <td class="nbHitsCovered"><a title="Line 37: Conditional coverage 100% (2/2).">&nbsp;18</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 37: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (T item : items) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;38</td>  <td class="nbHitsUncovered"><a title="Line 38: Conditional coverage 50% (1/2).">&nbsp;4</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 38: Conditional coverage 50% (1/2).">                        <span class="keyword">if</span> (item == <span class="keyword">null</span>) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;39</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                                <span class="keyword">continue</span>;</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;40</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;41</td>  <td class="nbHitsUncovered"><a title="Line 41: Conditional coverage 50% (1/2).">&nbsp;2</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 41: Conditional coverage 50% (1/2).">                        <span class="keyword">if</span> (counter &gt; 0) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;41</td>  <td class="nbHitsUncovered"><a title="Line 41: Conditional coverage 50% (1/2).">&nbsp;4</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 41: Conditional coverage 50% (1/2).">                        <span class="keyword">if</span> (counter &gt; 0) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;42</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                                sb.append(<span class="keyword">this</span>.separator);</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;43</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;44</td>  <td class="nbHitsUncovered"><a title="Line 44: Conditional coverage 50% (1/2).">&nbsp;2</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 44: Conditional coverage 50% (1/2).">                        <span class="keyword">if</span> (<span class="keyword">this</span>.toStringBuilder != <span class="keyword">null</span>) {</a></span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;45</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;                                sb.append(<span class="keyword">this</span>.toStringBuilder.toString(item));</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;44</td>  <td class="nbHitsUncovered"><a title="Line 44: Conditional coverage 50% (1/2).">&nbsp;4</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 44: Conditional coverage 50% (1/2).">                        <span class="keyword">if</span> (<span class="keyword">this</span>.toStringBuilder != <span class="keyword">null</span>) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;45</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;                                sb.append(<span class="keyword">this</span>.toStringBuilder.toString(item));</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;46</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        } <span class="keyword">else</span> {</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;47</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                                sb.append(item.toString());</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;48</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;49</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;                        counter++;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;50</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;51</td>  <td class="nbHitsCovered">&nbsp;16</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> sb.toString();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;49</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;                        counter++;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;50</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;51</td>  <td class="nbHitsCovered">&nbsp;18</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> sb.toString();</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;52</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;53</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;}</pre></td></tr>
 </table>
 
-<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.1.1 on 09.07.16 14:20.</div>
+<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.1.1 on 17.08.16 11:57.</div>
 </body>
 </html>

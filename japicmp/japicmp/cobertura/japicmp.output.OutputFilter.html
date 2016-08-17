@@ -39,19 +39,19 @@
   <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> java.util.*;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;9</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;10</td>  <td class="nbHitsCovered">&nbsp;50</td>  <td class="src"><pre class="src">&nbsp;<span class="keyword">public</span> <span class="keyword">class</span> OutputFilter <span class="keyword">extends</span> Filter {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;10</td>  <td class="nbHitsCovered">&nbsp;54</td>  <td class="src"><pre class="src">&nbsp;<span class="keyword">public</span> <span class="keyword">class</span> OutputFilter <span class="keyword">extends</span> Filter {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;11</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">private</span> <span class="keyword">final</span> Options options;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;12</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;13</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> OutputFilter(Options options) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;14</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">this</span>.options = options;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;15</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;13</td>  <td class="nbHitsCovered">&nbsp;10</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> OutputFilter(Options options) {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;14</td>  <td class="nbHitsCovered">&nbsp;10</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">this</span>.options = options;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;15</td>  <td class="nbHitsCovered">&nbsp;10</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;16</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;17</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> <span class="keyword">void</span> filter(List&lt;JApiClass&gt; jApiClasses) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;18</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;                filter(jApiClasses, <span class="keyword">new</span> FilterVisitor() {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;18</td>  <td class="nbHitsCovered">&nbsp;10</td>  <td class="src"><pre class="src">&nbsp;                filter(jApiClasses, <span class="keyword">new</span> FilterVisitor() {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;19</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        @Override</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;20</td>  <td class="nbHits">&nbsp;</td>
@@ -136,7 +136,7 @@
   <td class="src"><pre class="src">&nbsp;                        <span class="keyword">public</span> <span class="keyword">void</span> visit(JApiSuperclass jApiSuperclass) {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;76</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                <span class="comment">// cannot remove superclass</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;77</td>  <td class="nbHitsCovered">&nbsp;8</td>  <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;77</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;78</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;79</td>  <td class="nbHits">&nbsp;</td>
@@ -243,8 +243,8 @@
   <td class="src"><pre class="src">&nbsp;                        @Override</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;150</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        <span class="keyword">public</span> <span class="keyword">void</span> visit(Iterator&lt;JApiClass&gt; iterator, JApiClass jApiClass) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;151</td>  <td class="nbHitsCovered">&nbsp;8</td>  <td class="src"><pre class="src">&nbsp;                                <span class="keyword">boolean</span> remove = <span class="keyword">false</span>;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;152</td>  <td class="nbHitsUncovered"><a title="Line 152: Conditional coverage 50% (1/2).">&nbsp;8</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 152: Conditional coverage 50% (1/2).">                                <span class="keyword">if</span> (options.isOutputOnlyModifications()) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;151</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;                                <span class="keyword">boolean</span> remove = <span class="keyword">false</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;152</td>  <td class="nbHitsUncovered"><a title="Line 152: Conditional coverage 50% (1/2).">&nbsp;9</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 152: Conditional coverage 50% (1/2).">                                <span class="keyword">if</span> (options.isOutputOnlyModifications()) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;153</td>  <td class="nbHitsUncovered"><a title="Line 153: Conditional coverage 0% (0/4) [each condition: 0%, 0%].">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 153: Conditional coverage 0% (0/4) [each condition: 0%, 0%].">                                        <span class="keyword">if</span> (jApiClass.getChangeStatus() == JApiChangeStatus.UNCHANGED &amp;&amp; jApiClass.isSourceCompatible()) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;154</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                                                ImmutableList&lt;Boolean&gt; list = findOneChangedElement(jApiClass);</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;155</td>  <td class="nbHitsUncovered"><a title="Line 155: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 155: Conditional coverage 0% (0/2).">                                                <span class="keyword">if</span> (list.isEmpty()) { <span class="comment">//filter out this class if it does not have any changed element (e.g. annotations)</span></a></span></pre></td></tr>
@@ -255,18 +255,18 @@
   <td class="src"><pre class="src">&nbsp;                                        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;159</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;160</td>  <td class="nbHitsUncovered"><a title="Line 160: Conditional coverage 50% (1/2).">&nbsp;8</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 160: Conditional coverage 50% (1/2).">                                <span class="keyword">if</span> (options.isOutputOnlyBinaryIncompatibleModifications()) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;160</td>  <td class="nbHitsUncovered"><a title="Line 160: Conditional coverage 50% (1/2).">&nbsp;9</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 160: Conditional coverage 50% (1/2).">                                <span class="keyword">if</span> (options.isOutputOnlyBinaryIncompatibleModifications()) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;161</td>  <td class="nbHitsUncovered"><a title="Line 161: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 161: Conditional coverage 0% (0/2).">                                        <span class="keyword">if</span> (jApiClass.isBinaryCompatible()) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;162</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                                                remove = <span class="keyword">true</span>;</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;163</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;164</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;165</td>  <td class="nbHitsCovered"><a title="Line 165: Conditional coverage 100% (2/2).">&nbsp;8</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 165: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (!ModifierHelper.matchesModifierLevel(jApiClass, OutputFilter.<span class="keyword">this</span>.options.getAccessModifier())) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;165</td>  <td class="nbHitsCovered"><a title="Line 165: Conditional coverage 100% (2/2).">&nbsp;9</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 165: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (!ModifierHelper.matchesModifierLevel(jApiClass, OutputFilter.<span class="keyword">this</span>.options.getAccessModifier())) {</a></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;166</td>  <td class="nbHitsCovered">&nbsp;3</td>  <td class="src"><pre class="src">&nbsp;                                        remove = <span class="keyword">true</span>;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;167</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;168</td>  <td class="nbHitsCovered"><a title="Line 168: Conditional coverage 100% (2/2).">&nbsp;8</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 168: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (jApiClass.getChangeStatus() == JApiChangeStatus.MODIFIED) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;168</td>  <td class="nbHitsCovered"><a title="Line 168: Conditional coverage 100% (2/2).">&nbsp;9</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 168: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (jApiClass.getChangeStatus() == JApiChangeStatus.MODIFIED) {</a></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;169</td>  <td class="nbHitsUncovered"><a title="Line 169: Conditional coverage 50% (2/4) [each condition: 50%, 50%].">&nbsp;3</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 169: Conditional coverage 50% (2/4) [each condition: 50%, 50%].">                                        <span class="keyword">if</span> (options.getAccessModifier().getLevel() &gt; AccessModifier.PRIVATE.getLevel() &amp;&amp; options.isOutputOnlyModifications()) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;170</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                                                ImmutableList&lt;Boolean&gt; list = findOneChangedElement(jApiClass);</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;171</td>  <td class="nbHitsUncovered"><a title="Line 171: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 171: Conditional coverage 0% (0/2).">                                                <span class="keyword">if</span> (list.isEmpty()) { <span class="comment">//filter out this class if it does not have any changed element at this filter level</span></a></span></pre></td></tr>
@@ -277,19 +277,19 @@
   <td class="src"><pre class="src">&nbsp;                                        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;175</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;176</td>  <td class="nbHitsUncovered"><a title="Line 176: Conditional coverage 50% (1/2).">&nbsp;8</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 176: Conditional coverage 50% (1/2).">                                <span class="keyword">if</span> (jApiClass.getJavaObjectSerializationCompatible().isIncompatible()) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;176</td>  <td class="nbHitsUncovered"><a title="Line 176: Conditional coverage 50% (1/2).">&nbsp;9</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 176: Conditional coverage 50% (1/2).">                                <span class="keyword">if</span> (jApiClass.getJavaObjectSerializationCompatible().isIncompatible()) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;177</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                                        remove = <span class="keyword">false</span>;</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;178</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;179</td>  <td class="nbHitsCovered"><a title="Line 179: Conditional coverage 100% (2/2).">&nbsp;8</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 179: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (!ModifierHelper.includeSynthetic(jApiClass, options)) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;179</td>  <td class="nbHitsCovered"><a title="Line 179: Conditional coverage 100% (2/2).">&nbsp;9</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 179: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (!ModifierHelper.includeSynthetic(jApiClass, options)) {</a></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;180</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;                                        remove = <span class="keyword">true</span>;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;181</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;182</td>  <td class="nbHitsCovered"><a title="Line 182: Conditional coverage 100% (2/2).">&nbsp;8</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 182: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (remove) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;182</td>  <td class="nbHitsCovered"><a title="Line 182: Conditional coverage 100% (2/2).">&nbsp;9</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 182: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (remove) {</a></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;183</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;                                        iterator.remove();</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;184</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;185</td>  <td class="nbHitsCovered">&nbsp;8</td>  <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;185</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;186</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;187</td>  <td class="nbHits">&nbsp;</td>
@@ -395,21 +395,21 @@
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;253</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                });</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;254</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;254</td>  <td class="nbHitsCovered">&nbsp;10</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;255</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;256</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> sortClassesAndMethods(List&lt;JApiClass&gt; jApiClasses) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;257</td>  <td class="nbHitsCovered">&nbsp;108</td>  <td class="src"><pre class="src">&nbsp;                Collections.sort(jApiClasses, <span class="keyword">new</span> Comparator&lt;JApiClass&gt;() {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;257</td>  <td class="nbHitsCovered">&nbsp;112</td>  <td class="src"><pre class="src">&nbsp;                Collections.sort(jApiClasses, <span class="keyword">new</span> Comparator&lt;JApiClass&gt;() {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;258</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        <span class="keyword">public</span> <span class="keyword">int</span> compare(JApiClass o1, JApiClass o2) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;259</td>  <td class="nbHitsCovered">&nbsp;48</td>  <td class="src"><pre class="src">&nbsp;                                <span class="keyword">return</span> o1.getFullyQualifiedName().compareToIgnoreCase(o2.getFullyQualifiedName());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;259</td>  <td class="nbHitsCovered">&nbsp;49</td>  <td class="src"><pre class="src">&nbsp;                                <span class="keyword">return</span> o1.getFullyQualifiedName().compareToIgnoreCase(o2.getFullyQualifiedName());</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;260</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;261</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                });</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;262</td>  <td class="nbHitsCovered"><a title="Line 262: Conditional coverage 100% (2/2).">&nbsp;108</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 262: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (JApiClass jApiClass : jApiClasses) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;263</td>  <td class="nbHitsCovered">&nbsp;147</td>  <td class="src"><pre class="src">&nbsp;                        Collections.sort(jApiClass.getMethods(), <span class="keyword">new</span> Comparator&lt;JApiMethod&gt;() {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;262</td>  <td class="nbHitsCovered"><a title="Line 262: Conditional coverage 100% (2/2).">&nbsp;112</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 262: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (JApiClass jApiClass : jApiClasses) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;263</td>  <td class="nbHitsCovered">&nbsp;152</td>  <td class="src"><pre class="src">&nbsp;                        Collections.sort(jApiClass.getMethods(), <span class="keyword">new</span> Comparator&lt;JApiMethod&gt;() {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;264</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                <span class="keyword">public</span> <span class="keyword">int</span> compare(JApiMethod o1, JApiMethod o2) {</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;265</td>  <td class="nbHitsCovered">&nbsp;32</td>  <td class="src"><pre class="src">&nbsp;                                        <span class="keyword">return</span> o1.getName().compareToIgnoreCase(o2.getName());</pre></td></tr>
@@ -417,12 +417,12 @@
   <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;267</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        });</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;268</td>  <td class="nbHitsCovered">&nbsp;147</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;269</td>  <td class="nbHitsCovered">&nbsp;108</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;268</td>  <td class="nbHitsCovered">&nbsp;152</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;269</td>  <td class="nbHitsCovered">&nbsp;112</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;270</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;}</pre></td></tr>
 </table>
 
-<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.1.1 on 09.07.16 14:20.</div>
+<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.1.1 on 17.08.16 11:57.</div>
 </body>
 </html>
