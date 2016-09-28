@@ -1,52 +1,13 @@
-Comparing /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.8.1/japicmp-0.8.1.jar with /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.9.0.jar:
-***  MODIFIED CLASS: PUBLIC japicmp.cli.JApiCli  (not serializable)
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String IGNORE_MISSING_CLASSES_BY_REGEX
+Comparing source compatibility of /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.9.1.jar against /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.9.0/japicmp-0.9.0.jar
 ***  MODIFIED CLASS: PUBLIC STATIC japicmp.cli.JApiCli$Compare  (not serializable)
-	===  UNCHANGED FIELD: PUBLIC boolean ignoreMissingClasses
-		***  MODIFIED ANNOTATION: io.airlift.airline.Option
-			===  UNCHANGED ELEMENT: name=--ignore-missing-classes
-			***  MODIFIED ELEMENT: description=Ignores all superclasses/interfaces missing on the classpath. (<- Ignores superclasses/interfaces missing on the classpath.)
-	+++  NEW FIELD: PUBLIC(+) java.util.List ignoreMissingClassesByRegEx
+	+++  NEW FIELD: PUBLIC(+) boolean reportOnlyFilename
 		+++  NEW ANNOTATION: io.airlift.airline.Option
-			+++  NEW ELEMENT: name=--ignore-missing-classes-by-regex (+)
-			+++  NEW ELEMENT: description=Ignores only those superclasses/interface missing on the classpath that are selected by a regular expression. (+)
-***! MODIFIED CLASS: PUBLIC japicmp.cmp.JarArchiveComparatorOptions  (not serializable)
-	+++  NEW METHOD: PUBLIC(+) japicmp.config.IgnoreMissingClasses getIgnoreMissingClasses()
-	---! REMOVED METHOD: PUBLIC(-) boolean isIgnoreMissingClasses()
-	---! REMOVED METHOD: PUBLIC(-) void setIgnoreMissingClasses(boolean)
-+++  NEW CLASS: PUBLIC(+) japicmp.config.IgnoreMissingClasses  (not serializable)
-	+++  NEW SUPERCLASS: java.lang.Object
-	+++  NEW CONSTRUCTOR: PUBLIC(+) IgnoreMissingClasses()
-	+++  NEW METHOD: PUBLIC(+) java.util.List getIgnoreMissingClassRegularExpression()
-	+++  NEW METHOD: PUBLIC(+) boolean ignoreClass(java.lang.String)
-	+++  NEW METHOD: PUBLIC(+) boolean isIgnoreAllMissingClasses()
-	+++  NEW METHOD: PUBLIC(+) void setIgnoreAllMissingClasses(boolean)
-	+++  NEW METHOD: PUBLIC(+) void setIgnoreMissingClassRegularExpression(java.util.List)
-***! MODIFIED CLASS: PUBLIC japicmp.config.Options  (not serializable)
-	+++  NEW METHOD: PUBLIC(+) void addIgnoreMissingClassRegularExpression(java.lang.String)
-	***  MODIFIED METHOD: PUBLIC (<- PRIVATE) java.util.List createFilterList(com.google.common.base.Optional, java.util.List, java.lang.String)
-	+++  NEW METHOD: PUBLIC(+) japicmp.config.IgnoreMissingClasses getIgnoreMissingClasses()
-	---! REMOVED METHOD: PUBLIC(-) boolean isIgnoreMissingClasses()
-***  MODIFIED ENUM: PUBLIC STATIC FINAL japicmp.exception.JApiCmpException$Reason  (compatible)
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.exception.JApiCmpException$Reason IllegalArgument
-***! MODIFIED CLASS: PUBLIC japicmp.model.JApiField  (not serializable)
-	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiField(japicmp.model.JApiChangeStatus, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.cmp.JarArchiveComparatorOptions)
-	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiField(japicmp.model.JApiClass, japicmp.model.JApiChangeStatus, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.cmp.JarArchiveComparatorOptions)
-	+++  NEW METHOD: PUBLIC(+) japicmp.model.JApiClass getjApiClass()
-		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlTransient
-***! MODIFIED CLASS: PUBLIC japicmp.model.JApiImplementedInterface  (not serializable)
-	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiImplementedInterface(java.lang.String, japicmp.model.JApiChangeStatus)
-	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiImplementedInterface(javassist.CtClass, java.lang.String, japicmp.model.JApiChangeStatus)
-	+++  NEW METHOD: PUBLIC(+) javassist.CtClass getCtClass()
-		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlTransient
-***! MODIFIED CLASS: PUBLIC japicmp.model.JApiSuperclass  (not serializable)
-	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiSuperclass(com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus, japicmp.cmp.JarArchiveComparator)
-	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiSuperclass(japicmp.model.JApiClass, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus, japicmp.cmp.JarArchiveComparator)
-	+++  NEW METHOD: PUBLIC(+) japicmp.model.JApiClass getJApiClassOwning()
-		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlTransient
-***  MODIFIED CLASS: PUBLIC japicmp.output.xml.model.JApiCmpXmlRoot  (not serializable)
-	+++  NEW METHOD: PUBLIC(+) java.lang.String getIgnoreMissingClassesByRegularExpressions()
-		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
-	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional getTitleOptional()
-	+++  NEW METHOD: PUBLIC(+) void setIgnoreMissingClassesByRegularExpressions(java.lang.String)
-	+++  NEW METHOD: PUBLIC(+) void setTitleOptional(com.google.common.base.Optional)
+			+++  NEW ELEMENT: name=--report-only-filename (+)
+			+++  NEW ELEMENT: description=Use just filename in report description. (+)
+***  MODIFIED CLASS: PUBLIC japicmp.config.Options  (not serializable)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDifferenceDescription()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String joinNewArchives()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String joinOldArchives()
+	+++  NEW METHOD: PUBLIC(+) void setReportOnlyFilename(boolean)
+***  MODIFIED CLASS: PUBLIC japicmp.util.ListJoiner  (not serializable)
+	+++  NEW METHOD: PUBLIC(+) java.lang.StringBuilder join(java.lang.StringBuilder, java.util.List)

@@ -47,26 +47,26 @@
   <td class="src"><pre class="src">&nbsp;        @Override</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;16</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> <span class="keyword">boolean</span> matches(CtBehavior ctBehavior) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;17</td>  <td class="nbHitsCovered">&nbsp;223</td>  <td class="src"><pre class="src">&nbsp;                List attributes = ctBehavior.getMethodInfo().getAttributes();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;18</td>  <td class="nbHitsCovered">&nbsp;223</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">boolean</span> hasAnnotation = hasAnnotation(attributes);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;19</td>  <td class="nbHitsCovered"><a title="Line 19: Conditional coverage 100% (2/2).">&nbsp;223</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 19: Conditional coverage 100% (2/2).">                <span class="keyword">if</span> (!hasAnnotation) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;20</td>  <td class="nbHitsCovered">&nbsp;216</td>  <td class="src"><pre class="src">&nbsp;                        CtClass declaringClass = ctBehavior.getDeclaringClass();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;21</td>  <td class="nbHitsCovered">&nbsp;216</td>  <td class="src"><pre class="src">&nbsp;                        hasAnnotation = hasAnnotation(declaringClass.getClassFile().getAttributes());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;22</td>  <td class="nbHitsUncovered"><a title="Line 22: Conditional coverage 50% (1/2).">&nbsp;216</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 22: Conditional coverage 50% (1/2).">                        <span class="keyword">if</span> (!hasAnnotation) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;17</td>  <td class="nbHitsCovered">&nbsp;93</td>  <td class="src"><pre class="src">&nbsp;                List attributes = ctBehavior.getMethodInfo().getAttributes();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;18</td>  <td class="nbHitsCovered">&nbsp;93</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">boolean</span> hasAnnotation = hasAnnotation(attributes);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;19</td>  <td class="nbHitsCovered"><a title="Line 19: Conditional coverage 100% (2/2).">&nbsp;93</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 19: Conditional coverage 100% (2/2).">                <span class="keyword">if</span> (!hasAnnotation) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;20</td>  <td class="nbHitsCovered">&nbsp;86</td>  <td class="src"><pre class="src">&nbsp;                        CtClass declaringClass = ctBehavior.getDeclaringClass();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;21</td>  <td class="nbHitsCovered">&nbsp;86</td>  <td class="src"><pre class="src">&nbsp;                        hasAnnotation = hasAnnotation(declaringClass.getClassFile().getAttributes());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;22</td>  <td class="nbHitsUncovered"><a title="Line 22: Conditional coverage 50% (1/2).">&nbsp;86</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 22: Conditional coverage 50% (1/2).">                        <span class="keyword">if</span> (!hasAnnotation) {</a></span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;23</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                <span class="keyword">try</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;24</td>  <td class="nbHitsCovered">&nbsp;216</td>  <td class="src"><pre class="src">&nbsp;                                        declaringClass = declaringClass.getDeclaringClass();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;25</td>  <td class="nbHitsUncovered"><a title="Line 25: Conditional coverage 50% (1/2).">&nbsp;216</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 25: Conditional coverage 50% (1/2).">                                        <span class="keyword">if</span> (declaringClass != <span class="keyword">null</span>) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;24</td>  <td class="nbHitsCovered">&nbsp;86</td>  <td class="src"><pre class="src">&nbsp;                                        declaringClass = declaringClass.getDeclaringClass();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;25</td>  <td class="nbHitsUncovered"><a title="Line 25: Conditional coverage 50% (1/2).">&nbsp;86</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 25: Conditional coverage 50% (1/2).">                                        <span class="keyword">if</span> (declaringClass != <span class="keyword">null</span>) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;26</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                                                hasAnnotation = hasAnnotation(declaringClass.getClassFile().getAttributes());</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;27</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                        }</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;28</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                                } <span class="keyword">catch</span> (NotFoundException ignored) {</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;29</td>  <td class="nbHitsCovered">&nbsp;216</td>  <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;29</td>  <td class="nbHitsCovered">&nbsp;86</td>  <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;30</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;31</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;32</td>  <td class="nbHitsCovered">&nbsp;223</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> hasAnnotation;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;32</td>  <td class="nbHitsCovered">&nbsp;93</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> hasAnnotation;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;33</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;34</td>  <td class="nbHits">&nbsp;</td>
@@ -82,6 +82,6 @@
   <td class="src"><pre class="src">&nbsp;}</pre></td></tr>
 </table>
 
-<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.1.1 on 17.08.16 11:57.</div>
+<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.1.1 on 28.09.16 23:30.</div>
 </body>
 </html>

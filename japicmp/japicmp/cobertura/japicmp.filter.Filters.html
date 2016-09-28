@@ -133,10 +133,10 @@
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;81</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> <span class="keyword">boolean</span> includeBehavior(CtBehavior ctMethod) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;82</td>  <td class="nbHitsCovered"><a title="Line 82: Conditional coverage 100% (2/2).">&nbsp;10450</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 82: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (Filter filter : excludes) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;83</td>  <td class="nbHitsCovered"><a title="Line 83: Conditional coverage 100% (2/2).">&nbsp;1013</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 83: Conditional coverage 100% (2/2).">                        <span class="keyword">if</span> (filter <span class="keyword">instanceof</span> BehaviorFilter) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;84</td>  <td class="nbHitsCovered">&nbsp;383</td>  <td class="src"><pre class="src">&nbsp;                                BehaviorFilter behaviorFilter = (BehaviorFilter) filter;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;85</td>  <td class="nbHitsCovered"><a title="Line 85: Conditional coverage 100% (2/2).">&nbsp;383</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 85: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (behaviorFilter.matches(ctMethod)) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;82</td>  <td class="nbHitsCovered"><a title="Line 82: Conditional coverage 100% (2/2).">&nbsp;2965</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 82: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (Filter filter : excludes) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;83</td>  <td class="nbHitsCovered"><a title="Line 83: Conditional coverage 100% (2/2).">&nbsp;337</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 83: Conditional coverage 100% (2/2).">                        <span class="keyword">if</span> (filter <span class="keyword">instanceof</span> BehaviorFilter) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;84</td>  <td class="nbHitsCovered">&nbsp;123</td>  <td class="src"><pre class="src">&nbsp;                                BehaviorFilter behaviorFilter = (BehaviorFilter) filter;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;85</td>  <td class="nbHitsCovered"><a title="Line 85: Conditional coverage 100% (2/2).">&nbsp;123</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 85: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (behaviorFilter.matches(ctMethod)) {</a></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;86</td>  <td class="nbHitsUncovered"><a title="Line 86: Conditional coverage 50% (1/2).">&nbsp;7</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 86: Conditional coverage 50% (1/2).">                                        <span class="keyword">if</span> (LOGGER.isLoggable(Level.FINE)) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;87</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                                                LOGGER.log(Level.FINE, <span class="string">"Excluding method '"</span> + ctMethod.getLongName() + <span class="string">"' because exclude method filter did match."</span>);</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;88</td>  <td class="nbHits">&nbsp;</td>
@@ -146,13 +146,13 @@
   <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;91</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;92</td>  <td class="nbHitsCovered">&nbsp;1006</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;93</td>  <td class="nbHitsCovered">&nbsp;10443</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">int</span> includesCount = 0;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;94</td>  <td class="nbHitsCovered"><a title="Line 94: Conditional coverage 100% (2/2).">&nbsp;10443</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 94: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (Filter filter : includes) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;95</td>  <td class="nbHitsCovered"><a title="Line 95: Conditional coverage 100% (2/2).">&nbsp;589</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 95: Conditional coverage 100% (2/2).">                        <span class="keyword">if</span> (filter <span class="keyword">instanceof</span> BehaviorFilter) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;96</td>  <td class="nbHitsCovered">&nbsp;168</td>  <td class="src"><pre class="src">&nbsp;                                includesCount++;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;97</td>  <td class="nbHitsCovered">&nbsp;168</td>  <td class="src"><pre class="src">&nbsp;                                BehaviorFilter behaviorFilter = (BehaviorFilter) filter;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;98</td>  <td class="nbHitsCovered"><a title="Line 98: Conditional coverage 100% (2/2).">&nbsp;168</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 98: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (behaviorFilter.matches(ctMethod)) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;92</td>  <td class="nbHitsCovered">&nbsp;330</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;93</td>  <td class="nbHitsCovered">&nbsp;2958</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">int</span> includesCount = 0;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;94</td>  <td class="nbHitsCovered"><a title="Line 94: Conditional coverage 100% (2/2).">&nbsp;2958</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 94: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (Filter filter : includes) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;95</td>  <td class="nbHitsCovered"><a title="Line 95: Conditional coverage 100% (2/2).">&nbsp;251</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 95: Conditional coverage 100% (2/2).">                        <span class="keyword">if</span> (filter <span class="keyword">instanceof</span> BehaviorFilter) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;96</td>  <td class="nbHitsCovered">&nbsp;90</td>  <td class="src"><pre class="src">&nbsp;                                includesCount++;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;97</td>  <td class="nbHitsCovered">&nbsp;90</td>  <td class="src"><pre class="src">&nbsp;                                BehaviorFilter behaviorFilter = (BehaviorFilter) filter;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;98</td>  <td class="nbHitsCovered"><a title="Line 98: Conditional coverage 100% (2/2).">&nbsp;90</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 98: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (behaviorFilter.matches(ctMethod)) {</a></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;99</td>  <td class="nbHitsUncovered"><a title="Line 99: Conditional coverage 50% (1/2).">&nbsp;6</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 99: Conditional coverage 50% (1/2).">                                        <span class="keyword">if</span> (LOGGER.isLoggable(Level.FINE)) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;100</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                                                LOGGER.log(Level.FINE, <span class="string">"Including method '"</span> + ctMethod.getLongName() + <span class="string">"' because include method filter matched."</span>);</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;101</td>  <td class="nbHits">&nbsp;</td>
@@ -162,23 +162,23 @@
   <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;104</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;105</td>  <td class="nbHitsCovered">&nbsp;583</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;106</td>  <td class="nbHitsCovered"><a title="Line 106: Conditional coverage 100% (2/2).">&nbsp;10437</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 106: Conditional coverage 100% (2/2).">                <span class="keyword">if</span> (includesCount &gt; 0) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;107</td>  <td class="nbHitsUncovered"><a title="Line 107: Conditional coverage 50% (1/2).">&nbsp;162</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 107: Conditional coverage 50% (1/2).">                        <span class="keyword">if</span> (LOGGER.isLoggable(Level.FINE)) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;105</td>  <td class="nbHitsCovered">&nbsp;245</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;106</td>  <td class="nbHitsCovered"><a title="Line 106: Conditional coverage 100% (2/2).">&nbsp;2952</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 106: Conditional coverage 100% (2/2).">                <span class="keyword">if</span> (includesCount &gt; 0) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;107</td>  <td class="nbHitsUncovered"><a title="Line 107: Conditional coverage 50% (1/2).">&nbsp;84</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 107: Conditional coverage 50% (1/2).">                        <span class="keyword">if</span> (LOGGER.isLoggable(Level.FINE)) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;108</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                                LOGGER.log(Level.FINE, <span class="string">"Excluding method '"</span> + ctMethod.getLongName() + <span class="string">"' because no include matched."</span>);</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;109</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;110</td>  <td class="nbHitsCovered">&nbsp;162</td>  <td class="src"><pre class="src">&nbsp;                        <span class="keyword">return</span> <span class="keyword">false</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;110</td>  <td class="nbHitsCovered">&nbsp;84</td>  <td class="src"><pre class="src">&nbsp;                        <span class="keyword">return</span> <span class="keyword">false</span>;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;111</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;112</td>  <td class="nbHitsCovered">&nbsp;10275</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">true</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;112</td>  <td class="nbHitsCovered">&nbsp;2868</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">true</span>;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;113</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;114</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;115</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> <span class="keyword">boolean</span> includeField(CtField ctField) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;116</td>  <td class="nbHitsCovered"><a title="Line 116: Conditional coverage 100% (2/2).">&nbsp;271</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 116: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (Filter filter : excludes) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;116</td>  <td class="nbHitsCovered"><a title="Line 116: Conditional coverage 100% (2/2).">&nbsp;129</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 116: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (Filter filter : excludes) {</a></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;117</td>  <td class="nbHitsCovered"><a title="Line 117: Conditional coverage 100% (2/2).">&nbsp;6</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 117: Conditional coverage 100% (2/2).">                        <span class="keyword">if</span> (filter <span class="keyword">instanceof</span> FieldFilter) {</a></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;118</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;                                FieldFilter fieldFilter = (FieldFilter) filter;</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;119</td>  <td class="nbHitsCovered"><a title="Line 119: Conditional coverage 100% (2/2).">&nbsp;4</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 119: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (fieldFilter.matches(ctField)) {</a></pre></td></tr>
@@ -192,8 +192,8 @@
 <tr>  <td class="numLine">&nbsp;125</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;126</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;127</td>  <td class="nbHitsCovered">&nbsp;269</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">int</span> includesCount = 0;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;128</td>  <td class="nbHitsCovered"><a title="Line 128: Conditional coverage 100% (2/2).">&nbsp;269</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 128: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (Filter filter : includes) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;127</td>  <td class="nbHitsCovered">&nbsp;127</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">int</span> includesCount = 0;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;128</td>  <td class="nbHitsCovered"><a title="Line 128: Conditional coverage 100% (2/2).">&nbsp;127</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 128: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (Filter filter : includes) {</a></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;129</td>  <td class="nbHitsCovered"><a title="Line 129: Conditional coverage 100% (2/2).">&nbsp;7</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 129: Conditional coverage 100% (2/2).">                        <span class="keyword">if</span> (filter <span class="keyword">instanceof</span> FieldFilter) {</a></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;130</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;                                FieldFilter fieldFilter = (FieldFilter) filter;</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;131</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;                                includesCount++;</pre></td></tr>
@@ -208,7 +208,7 @@
 <tr>  <td class="numLine">&nbsp;138</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;139</td>  <td class="nbHitsCovered">&nbsp;5</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;140</td>  <td class="nbHitsCovered"><a title="Line 140: Conditional coverage 100% (2/2).">&nbsp;267</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 140: Conditional coverage 100% (2/2).">                <span class="keyword">if</span> (includesCount &gt; 0) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;140</td>  <td class="nbHitsCovered"><a title="Line 140: Conditional coverage 100% (2/2).">&nbsp;125</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 140: Conditional coverage 100% (2/2).">                <span class="keyword">if</span> (includesCount &gt; 0) {</a></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;141</td>  <td class="nbHitsUncovered"><a title="Line 141: Conditional coverage 50% (1/2).">&nbsp;2</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 141: Conditional coverage 50% (1/2).">                        <span class="keyword">if</span> (LOGGER.isLoggable(Level.FINE)) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;142</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                                LOGGER.log(Level.FINE, <span class="string">"Excluding field '"</span> + ctField.getName() + <span class="string">"' because no include matched."</span>);</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;143</td>  <td class="nbHits">&nbsp;</td>
@@ -216,13 +216,13 @@
 <tr>  <td class="numLineCover">&nbsp;144</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;                        <span class="keyword">return</span> <span class="keyword">false</span>;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;145</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;146</td>  <td class="nbHitsCovered">&nbsp;265</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">true</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;146</td>  <td class="nbHitsCovered">&nbsp;123</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">true</span>;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;147</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;148</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;}</pre></td></tr>
 </table>
 
-<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.1.1 on 17.08.16 11:57.</div>
+<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.1.1 on 28.09.16 23:30.</div>
 </body>
 </html>
