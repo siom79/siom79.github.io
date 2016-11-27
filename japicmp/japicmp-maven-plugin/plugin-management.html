@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20161127" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>japicmp-base - Project Distribution Management</title>
+    <title>japicmp-maven-plugin - Project Plugin Management</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.4.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -39,7 +39,7 @@
           <div id="banner">
         <div class="pull-left">
                                 <div id="bannerLeft">
-                <h2>japicmp-base</h2>
+                <h2>japicmp-maven-plugin</h2>
                 </div>
                       </div>
         <div class="pull-right">  </div>
@@ -55,7 +55,12 @@
         japicmp</a>
                     <span class="divider">/</span>
       </li>
-        <li class="active ">Project Distribution Management</li>
+                <li class="">
+                    <a href="./" title="japicmp-maven-plugin">
+        japicmp-maven-plugin</a>
+                    <span class="divider">/</span>
+      </li>
+        <li class="active ">Project Plugin Management</li>
         
                 
                     
@@ -74,44 +79,8 @@
                 
                     
                 <ul class="nav nav-list">
-                    <li class="nav-header">Overview</li>
-                              
-      <li>
-  
-                          <a href="index.html" title="Introduction">
-          <span class="none"></span>
-        Introduction</a>
-            </li>
-                
-      <li>
-  
-                          <a href="CliTool.html" title="Cli-Tool">
-          <span class="none"></span>
-        Cli-Tool</a>
-            </li>
-                
-      <li>
-  
-                          <a href="MavenPlugin.html" title="Maven Plugin">
-          <span class="none"></span>
-        Maven Plugin</a>
-            </li>
-                
-      <li>
-  
-                          <a href="Examples.html" title="Examples">
-          <span class="none"></span>
-        Examples</a>
-            </li>
-                
-      <li>
-  
-                          <a href="ReleaseNotes.html" title="Release Notes">
-          <span class="none"></span>
-        Release Notes</a>
-            </li>
-                              <li class="nav-header">Project Documentation</li>
-                                                                                                                                                                                                                                                                                                
+                    <li class="nav-header">Project Documentation</li>
+                                                                                                                                                                                                                                                                              
       <li>
   
                           <a href="project-info.html" title="Project Information">
@@ -140,10 +109,12 @@
         Dependency Information</a>
             </li>
                     
-      <li class="active">
+      <li>
   
-            <a href="#"><span class="none"></span>Distribution Management</a>
-          </li>
+                          <a href="distribution-management.html" title="Distribution Management">
+          <span class="none"></span>
+        Distribution Management</a>
+            </li>
                     
       <li>
   
@@ -159,19 +130,10 @@
         Project License</a>
             </li>
                     
-      <li>
+      <li class="active">
   
-                          <a href="modules.html" title="Project Modules">
-          <span class="none"></span>
-        Project Modules</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="plugin-management.html" title="Plugin Management">
-          <span class="none"></span>
-        Plugin Management</a>
-            </li>
+            <a href="#"><span class="none"></span>Plugin Management</a>
+          </li>
                     
       <li>
   
@@ -202,6 +164,13 @@
             </li>
               </ul>
         </li>
+                                                                                                      
+      <li>
+  
+                          <a href="project-reports.html" title="Project Reports">
+          <span class="icon-chevron-right"></span>
+        Project Reports</a>
+                  </li>
             </ul>
                 
                     
@@ -224,15 +193,28 @@
         <div id="bodyColumn"  class="span10" >
                                   
             <div class="section">
-<h2>Overview<a name="Overview"></a></h2><a name="Overview"></a>
-<p>The following is the distribution management information used by this project.</p>
-<div class="section">
-<h3>Repository - sonatype-nexus-staging<a name="Repository_-_sonatype-nexus-staging"></a></h3><a name="Repository_-_sonatype-nexus-staging"></a><a class="externalLink" href="https://oss.sonatype.org/service/local/staging/deploy/maven2/">https://oss.sonatype.org/service/local/staging/deploy/maven2/</a></div>
-<div class="section">
-<h3>Snapshot Repository - sonatype-nexus-snapshots<a name="Snapshot_Repository_-_sonatype-nexus-snapshots"></a></h3><a name="Snapshot_Repository_-_sonatype-nexus-snapshots"></a><a class="externalLink" href="https://oss.sonatype.org/content/repositories/snapshots/">https://oss.sonatype.org/content/repositories/snapshots/</a></div>
-<div class="section">
-<h3>Site - japicmp<a name="Site_-_japicmp"></a></h3><a name="Site_-_japicmp"></a>
-<p>file:///home/mmois/Programmierung/japicmp/target/deploy/site</p></div></div>
+<h2>Project Plugin Management<a name="Project_Plugin_Management"></a></h2><a name="Project_Plugin_Management"></a>
+<table border="0" class="table table-striped">
+<tr class="a">
+<th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th></tr>
+<tr class="b">
+<td>org.apache.maven.plugins</td>
+<td><a class="externalLink" href="http://maven.apache.org/plugins/maven-antrun-plugin/">maven-antrun-plugin</a></td>
+<td>1.3</td></tr>
+<tr class="a">
+<td>org.apache.maven.plugins</td>
+<td><a class="externalLink" href="http://maven.apache.org/plugins/maven-assembly-plugin/">maven-assembly-plugin</a></td>
+<td>2.2-beta-5</td></tr>
+<tr class="b">
+<td>org.apache.maven.plugins</td>
+<td><a class="externalLink" href="http://maven.apache.org/plugins/maven-dependency-plugin/">maven-dependency-plugin</a></td>
+<td>2.8</td></tr>
+<tr class="a">
+<td>org.apache.maven.plugins</td>
+<td><a class="externalLink" href="http://maven.apache.org/plugins/maven-release-plugin/">maven-release-plugin</a></td>
+<td>2.1</td></tr></table></div>
                   </div>
             </div>
           </div>
