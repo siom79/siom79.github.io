@@ -23,10 +23,10 @@ under the License.
     <link>https://github.com/siom79/japicmp</link>
     <description>japicmp - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2016</copyright>
+    <copyright>&#169;2017</copyright>
     <item>
       <title>File: 94,
-             Errors: 4219,
+             Errors: 4253,
              Warnings: 0,
              Infos: 0
       </title>
@@ -293,7 +293,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  13
+                  20
                 </td>
               </tr>
                           <tr>
@@ -307,7 +307,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  11
+                  14
                 </td>
               </tr>
                           <tr>
@@ -321,7 +321,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  11
+                  14
                 </td>
               </tr>
                           <tr>
@@ -419,7 +419,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  163
+                  168
                 </td>
               </tr>
                           <tr>
@@ -545,7 +545,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  112
+                  114
                 </td>
               </tr>
                           <tr>
@@ -573,7 +573,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  199
+                  202
                 </td>
               </tr>
                           <tr>
@@ -657,7 +657,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  67
+                  75
                 </td>
               </tr>
                           <tr>
@@ -1301,7 +1301,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  11
+                  14
                 </td>
               </tr>
                           <tr>

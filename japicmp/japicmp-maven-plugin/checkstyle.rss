@@ -23,10 +23,10 @@ under the License.
     <link>https://github.com/siom79/japicmp</link>
     <description>japicmp-maven-plugin - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2016</copyright>
+    <copyright>&#169;2017</copyright>
     <item>
       <title>File: 11,
-             Errors: 2976,
+             Errors: 2988,
              Warnings: 0,
              Infos: 0
       </title>
@@ -83,7 +83,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  227
+                  235
                 </td>
               </tr>
                           <tr>
@@ -97,7 +97,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  1662
+                  1664
                 </td>
               </tr>
                           <tr>
@@ -125,7 +125,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  163
+                  165
                 </td>
               </tr>
                           <tr>

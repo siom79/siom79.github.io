@@ -1,3 +1,5 @@
-Comparing source compatibility of /home/mmois/Programmierung/japicmp/japicmp/target/japicmp-0.9.3.jar against /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.9.2/japicmp-0.9.2.jar
-***! MODIFIED ENUM: PUBLIC FINAL japicmp.model.JApiCompatibilityChange  (field removed)
-	---! REMOVED FIELD: PUBLIC(-) STATIC(-) FINAL(-) japicmp.model.JApiCompatibilityChange SUPERCLASS_CHANGED
+Comparing source compatibility of /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.9.4.jar against /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.9.3/japicmp-0.9.3.jar
+***! MODIFIED CLASS: PUBLIC japicmp.JApiCmp  (not serializable)
+	***! MODIFIED CONSTRUCTOR: PRIVATE (<- PUBLIC) JApiCmp()
+***  MODIFIED CLASS: PUBLIC japicmp.model.JApiAnnotationElementValue  (not serializable)
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
