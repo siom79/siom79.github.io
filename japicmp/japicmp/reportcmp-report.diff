@@ -1,5 +1,58 @@
-Comparing source compatibility of /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.9.4.jar against /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.9.3/japicmp-0.9.3.jar
-***! MODIFIED CLASS: PUBLIC japicmp.JApiCmp  (not serializable)
-	***! MODIFIED CONSTRUCTOR: PRIVATE (<- PUBLIC) JApiCmp()
-***  MODIFIED CLASS: PUBLIC japicmp.model.JApiAnnotationElementValue  (not serializable)
+Comparing source compatibility of /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.10.0.jar against /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.9.4/japicmp-0.9.4.jar
++++  NEW CLASS: PUBLIC(+) japicmp.cmp.JApiCmpArchive  (not serializable)
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiCmpArchive(java.io.File, java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) java.io.File getFile()
+	+++  NEW METHOD: PUBLIC(+) japicmp.versioning.Version getVersion()
+***! MODIFIED CLASS: PUBLIC japicmp.cmp.JarArchiveComparator  (not serializable)
+	---! REMOVED METHOD: PUBLIC(-) java.util.List compare(java.io.File, java.io.File)
+	+++  NEW METHOD: PUBLIC(+) java.util.List compare(japicmp.cmp.JApiCmpArchive, japicmp.cmp.JApiCmpArchive)
+***  MODIFIED CLASS: PUBLIC japicmp.config.Options  (not serializable)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String joinNewVersions()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String joinOldVersions()
+***  MODIFIED CLASS: PUBLIC japicmp.output.xml.model.JApiCmpXmlRoot  (not serializable)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getNewVersion()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getOldVersion()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+	===  UNCHANGED METHOD: PUBLIC com.google.common.base.Optional getTitleOptional()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlTransient
+	+++  NEW METHOD: PUBLIC(+) void setNewVersion(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) void setOldVersion(java.lang.String)
++++  NEW CLASS: PUBLIC(+) japicmp.util.FileHelper  (not serializable)
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.util.List toFileList(java.util.List)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.util.List toVersionList(java.util.List)
++++  NEW CLASS: PUBLIC(+) japicmp.versioning.SemanticVersion  (not serializable)
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW CONSTRUCTOR: PUBLIC(+) SemanticVersion(int, int, int)
+	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional computeChangeType(japicmp.versioning.SemanticVersion)
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) int getMajor()
+	+++  NEW METHOD: PUBLIC(+) int getMinor()
+	+++  NEW METHOD: PUBLIC(+) int getPatch()
 	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toString()
++++  NEW ENUM: PUBLIC(+) STATIC(+) FINAL(+) japicmp.versioning.SemanticVersion$ChangeType  (compatible)
+	+++  NEW INTERFACE: java.lang.Comparable
+	+++  NEW INTERFACE: java.io.Serializable
+	+++  NEW SUPERCLASS: java.lang.Enum
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.versioning.SemanticVersion$ChangeType UNCHANGED
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.versioning.SemanticVersion$ChangeType MAJOR
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.versioning.SemanticVersion$ChangeType MINOR
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.versioning.SemanticVersion$ChangeType PATCH
+	+++  NEW METHOD: PUBLIC(+) int getRank()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.versioning.SemanticVersion$ChangeType valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.versioning.SemanticVersion$ChangeType[] values()
++++  NEW CLASS: PUBLIC(+) japicmp.versioning.Version  (not serializable)
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW CONSTRUCTOR: PUBLIC(+) Version(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional getSemanticVersion()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) com.google.common.base.Optional getSemanticVersion(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getStringVersion()
++++  NEW CLASS: PUBLIC(+) japicmp.versioning.VersionChange  (not serializable)
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW CONSTRUCTOR: PUBLIC(+) VersionChange(java.util.List, java.util.List, boolean, boolean)
+	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional computeChangeType()
+		+++  NEW EXCEPTION: japicmp.exception.JApiCmpException
+	+++  NEW METHOD: PUBLIC(+) boolean isAllMajorVersionsZero()
