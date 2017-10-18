@@ -1,58 +1,351 @@
-Comparing source compatibility of /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.10.0.jar against /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.9.4/japicmp-0.9.4.jar
-+++  NEW CLASS: PUBLIC(+) japicmp.cmp.JApiCmpArchive  (not serializable)
+Comparing source compatibility of /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.11.0.jar against /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.10.0/japicmp-0.10.0.jar
++++  NEW CLASS: PUBLIC(+) japicmp.cli.CliParser  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 51.0 <- -1.-1
 	+++  NEW SUPERCLASS: java.lang.Object
-	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiCmpArchive(java.io.File, java.lang.String)
-	+++  NEW METHOD: PUBLIC(+) java.io.File getFile()
-	+++  NEW METHOD: PUBLIC(+) japicmp.versioning.Version getVersion()
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String IGNORE_MISSING_CLASSES
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String IGNORE_MISSING_CLASSES_BY_REGEX
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String OLD_CLASSPATH
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String NEW_CLASSPATH
+	+++  NEW CONSTRUCTOR: PUBLIC(+) CliParser()
+	+++  NEW METHOD: PUBLIC(+) japicmp.config.Options parse(java.lang.String[])
+		+++  NEW EXCEPTION: java.lang.IllegalArgumentException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void printHelp()
+***! MODIFIED CLASS: PUBLIC japicmp.cli.JApiCli  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED FIELD: PUBLIC(-) STATIC(-) FINAL(-) java.lang.String IGNORE_MISSING_CLASSES
+	---! REMOVED FIELD: PUBLIC(-) STATIC(-) FINAL(-) java.lang.String IGNORE_MISSING_CLASSES_BY_REGEX
+	---! REMOVED FIELD: PUBLIC(-) STATIC(-) FINAL(-) java.lang.String OLD_CLASSPATH
+	---! REMOVED FIELD: PUBLIC(-) STATIC(-) FINAL(-) java.lang.String NEW_CLASSPATH
+	+++  NEW METHOD: PUBLIC(+) void run(java.lang.String[])
+---! REMOVED CLASS: PUBLIC(-) STATIC(-) japicmp.cli.JApiCli$Compare  (not serializable)
+	---  CLASS FILE FORMAT VERSION: -1.-1 <- 51.0
+	---! REMOVED INTERFACE: java.lang.Runnable
+	---! REMOVED SUPERCLASS: java.lang.Object
+	---! REMOVED FIELD: PUBLIC(-) boolean modifiedOnly
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=-m,--only-modified (-)
+			---  REMOVED ELEMENT: description=Outputs only modified classes/methods. (-)
+	---! REMOVED FIELD: PUBLIC(-) boolean onlyBinaryIncompatibleModifications
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=-b,--only-incompatible (-)
+			---  REMOVED ELEMENT: description=Outputs only classes/methods that are binary incompatible. If not given, all classes and methods are printed. (-)
+	---! REMOVED FIELD: PUBLIC(-) java.lang.String pathToNewVersionJar
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=-n,--new (-)
+			---  REMOVED ELEMENT: description=Provides the path to the new version(s) of the jar(s). Use ; to separate jar files. (-)
+	---! REMOVED FIELD: PUBLIC(-) java.lang.String excludes
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=-e,--exclude (-)
+			---  REMOVED ELEMENT: description=Semicolon separated list of elements to exclude in the form package.Class#classMember, * can be used as wildcard. Annotations are given as FQN starting with @. Examples: mypackage;my.Class;other.Class#method(int,long);foo.Class#field;@my.Annotation. (-)
+	---! REMOVED FIELD: PUBLIC(-) java.util.List ignoreMissingClassesByRegEx
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=--ignore-missing-classes-by-regex (-)
+			---  REMOVED ELEMENT: description=Ignores only those superclasses/interface missing on the classpath that are selected by a regular expression. (-)
+	---! REMOVED FIELD: PUBLIC(-) io.airlift.airline.HelpOption helpOption
+		---  REMOVED ANNOTATION: javax.inject.Inject
+	---! REMOVED FIELD: PUBLIC(-) java.lang.String pathToXmlOutputFile
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=-x,--xml-file (-)
+			---  REMOVED ELEMENT: description=Provides the path to the xml output file. (-)
+	---! REMOVED FIELD: PUBLIC(-) boolean noAnnotations
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=--no-annotations (-)
+			---  REMOVED ELEMENT: description=Do not evaluate annotations. (-)
+	---! REMOVED FIELD: PUBLIC(-) java.lang.String includes
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=-i,--include (-)
+			---  REMOVED ELEMENT: description=Semicolon separated list of elements to include in the form package.Class#classMember, * can be used as wildcard. Annotations are given as FQN starting with @. Examples: mypackage;my.Class;other.Class#method(int,long);foo.Class#field;@my.Annotation. (-)
+	---! REMOVED FIELD: PUBLIC(-) java.lang.String pathToOldVersionJar
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=-o,--old (-)
+			---  REMOVED ELEMENT: description=Provides the path to the old version(s) of the jar(s). Use ; to separate jar files. (-)
+	---! REMOVED FIELD: PUBLIC(-) boolean reportOnlyFilename
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=--report-only-filename (-)
+			---  REMOVED ELEMENT: description=Use just filename in report description. (-)
+	---! REMOVED FIELD: PUBLIC(-) java.lang.String pathToHtmlStylesheet
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=--html-stylesheet (-)
+			---  REMOVED ELEMENT: description=Provides the path to your own stylesheet. (-)
+	---! REMOVED FIELD: PUBLIC(-) boolean semanticVersioning
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=-s,--semantic-versioning (-)
+			---  REMOVED ELEMENT: description=Tells you which part of the version to increment. (-)
+	---! REMOVED FIELD: PUBLIC(-) java.lang.String newClassPath
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=--new-classpath (-)
+			---  REMOVED ELEMENT: description=The classpath for the new version. (-)
+	---! REMOVED FIELD: PUBLIC(-) java.lang.String accessModifier
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=-a (-)
+			---  REMOVED ELEMENT: description=Sets the access modifier level (public, package, protected, private), which should be used. (-)
+	---! REMOVED FIELD: PUBLIC(-) boolean includeSynthetic
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=--include-synthetic (-)
+			---  REMOVED ELEMENT: description=Include synthetic classes and class members that are hidden per default. (-)
+	---! REMOVED FIELD: PUBLIC(-) boolean ignoreMissingClasses
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=--ignore-missing-classes (-)
+			---  REMOVED ELEMENT: description=Ignores all superclasses/interfaces missing on the classpath. (-)
+	---! REMOVED FIELD: PUBLIC(-) java.lang.String oldClassPath
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=--old-classpath (-)
+			---  REMOVED ELEMENT: description=The classpath for the old version. (-)
+	---! REMOVED FIELD: PUBLIC(-) java.lang.String pathToHtmlOutputFile
+		---  REMOVED ANNOTATION: io.airlift.airline.Option
+			---  REMOVED ELEMENT: name=--html-file (-)
+			---  REMOVED ELEMENT: description=Provides the path to the html output file. (-)
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiCli$Compare()
+	---! REMOVED METHOD: PUBLIC(-) void run()
+	---  REMOVED ANNOTATION: io.airlift.airline.Command
+		---  REMOVED ELEMENT: name=java -jar japicmp.jar (-)
+		---  REMOVED ELEMENT: description=Compares jars (-)
 ***! MODIFIED CLASS: PUBLIC japicmp.cmp.JarArchiveComparator  (not serializable)
-	---! REMOVED METHOD: PUBLIC(-) java.util.List compare(java.io.File, java.io.File)
-	+++  NEW METHOD: PUBLIC(+) java.util.List compare(japicmp.cmp.JApiCmpArchive, japicmp.cmp.JApiCmpArchive)
-***  MODIFIED CLASS: PUBLIC japicmp.config.Options  (not serializable)
-	+++  NEW METHOD: PUBLIC(+) java.lang.String joinNewVersions()
-	+++  NEW METHOD: PUBLIC(+) java.lang.String joinOldVersions()
-***  MODIFIED CLASS: PUBLIC japicmp.output.xml.model.JApiCmpXmlRoot  (not serializable)
-	+++  NEW METHOD: PUBLIC(+) java.lang.String getNewVersion()
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) loadClass(japicmp.cmp.JarArchiveComparator$ArchiveType, java.lang.String)
+***  MODIFIED CLASS: PUBLIC japicmp.cmp.JarArchiveComparatorOptions  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	+++  NEW METHOD: PUBLIC(+) boolean isIncludeClassFileFormatVersion()
+***! MODIFIED CLASS: PUBLIC japicmp.config.Options  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED METHOD: PUBLIC(-) void addExcludeFromArgument(com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) void addExcludeFromArgument(japicmp.util.Optional, boolean)
+	---! REMOVED METHOD: PUBLIC(-) void addIncludeFromArgument(com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) void addIncludeFromArgument(japicmp.util.Optional, boolean)
+	---! REMOVED METHOD: PUBLIC(-) java.util.List createFilterList(com.google.common.base.Optional, java.util.List, java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) java.util.List createFilterList(japicmp.util.Optional, java.util.List, java.lang.String, boolean)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getHtmlOutputFile()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getHtmlStylesheet()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getNewClassPath()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldClassPath()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getXmlOutputFile()
+	+++  NEW METHOD: PUBLIC(+) boolean isHelpRequested()
+	+++  NEW METHOD: PUBLIC(+) boolean isSemanticVersioning()
+	---! REMOVED METHOD: PUBLIC(-) void setAccessModifier(com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) void setAccessModifier(japicmp.util.Optional)
+	+++  NEW METHOD: PUBLIC(+) void setHelpRequested(boolean)
+	---! REMOVED METHOD: PUBLIC(-) void setHtmlOutputFile(com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) void setHtmlOutputFile(japicmp.util.Optional)
+	---! REMOVED METHOD: PUBLIC(-) void setHtmlStylesheet(com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) void setHtmlStylesheet(japicmp.util.Optional)
+	---! REMOVED METHOD: PUBLIC(-) void setNewClassPath(com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) void setNewClassPath(japicmp.util.Optional)
+	---! REMOVED METHOD: PUBLIC(-) void setOldClassPath(com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) void setOldClassPath(japicmp.util.Optional)
+	+++  NEW METHOD: PUBLIC(+) void setSemanticVersioning(boolean)
+	---! REMOVED METHOD: PUBLIC(-) void setXmlOutputFile(com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) void setXmlOutputFile(japicmp.util.Optional)
+***! MODIFIED CLASS: PUBLIC japicmp.filter.JavadocLikePackageFilter  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JavadocLikePackageFilter(java.lang.String)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JavadocLikePackageFilter(java.lang.String, boolean)
+***  MODIFIED ENUM: PUBLIC FINAL japicmp.model.AccessModifier  (compatible)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.util.Optional toModifier(java.lang.String)
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiAnnotation  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiAnnotation(java.lang.String, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiAnnotation(java.lang.String, japicmp.util.Optional, japicmp.util.Optional, japicmp.model.JApiChangeStatus)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getNewAnnotation()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldAnnotation()
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiAnnotationElement  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiAnnotationElement(java.lang.String, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiAnnotationElement(java.lang.String, japicmp.util.Optional, japicmp.util.Optional, japicmp.model.JApiChangeStatus)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getNewValue()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldValue()
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiAnnotationElementValue  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getName()
+	---! REMOVED METHOD: PUBLIC(-) void setName(com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) void setName(japicmp.util.Optional)
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiAttribute  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiAttribute(japicmp.model.JApiChangeStatus, com.google.common.base.Optional, com.google.common.base.Optional)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiAttribute(japicmp.model.JApiChangeStatus, japicmp.util.Optional, japicmp.util.Optional)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getNewAttribute()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldAttribute()
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiBehavior  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	===! UNCHANGED INTERFACE: japicmp.model.JApiHasLineNumber
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiBehavior(japicmp.model.JApiClass, java.lang.String, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus, japicmp.cmp.JarArchiveComparator)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiBehavior(japicmp.model.JApiClass, java.lang.String, japicmp.util.Optional, japicmp.util.Optional, japicmp.model.JApiChangeStatus, japicmp.cmp.JarArchiveComparator)
+	---! REMOVED METHOD: PROTECTED(-) japicmp.model.JApiAttribute extractSyntheticAttribute(com.google.common.base.Optional, com.google.common.base.Optional)
+	+++  NEW METHOD: PROTECTED(+) japicmp.model.JApiAttribute extractSyntheticAttribute(japicmp.util.Optional, japicmp.util.Optional)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) geNewLineNumber()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldLineNumber()
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiClass  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiClass(japicmp.cmp.JarArchiveComparator, java.lang.String, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus, japicmp.model.JApiClassType)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiClass(japicmp.cmp.JarArchiveComparator, java.lang.String, japicmp.util.Optional, japicmp.util.Optional, japicmp.model.JApiChangeStatus, japicmp.model.JApiClassType)
+	+++  NEW METHOD: PUBLIC(+) japicmp.model.JApiClassFileFormatVersion getClassFileFormatVersion()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlElement
+			+++  NEW ELEMENT: name=classFileFormatVersion (+)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getNewClass()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldClass()
++++  NEW CLASS: PUBLIC(+) japicmp.model.JApiClassFileFormatVersion  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 51.0 <- -1.-1
+	+++  NEW INTERFACE: japicmp.model.JApiHasChangeStatus
+	+++  NEW INTERFACE: japicmp.model.JApiCompatibility
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiClassFileFormatVersion(int, int, int, int)
+	+++  NEW METHOD: PUBLIC(+) japicmp.model.JApiChangeStatus getChangeStatus()
 		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
-	+++  NEW METHOD: PUBLIC(+) java.lang.String getOldVersion()
+			+++  NEW ELEMENT: name=changeStatus (+)
+	+++  NEW METHOD: PUBLIC(+) java.util.List getCompatibilityChanges()
+	+++  NEW METHOD: PUBLIC(+) int getMajorVersionNew()
 		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
-	===  UNCHANGED METHOD: PUBLIC com.google.common.base.Optional getTitleOptional()
-		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlTransient
-	+++  NEW METHOD: PUBLIC(+) void setNewVersion(java.lang.String)
-	+++  NEW METHOD: PUBLIC(+) void setOldVersion(java.lang.String)
-+++  NEW CLASS: PUBLIC(+) japicmp.util.FileHelper  (not serializable)
+			+++  NEW ELEMENT: name=majorVersionNew (+)
+	+++  NEW METHOD: PUBLIC(+) int getMajorVersionOld()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+			+++  NEW ELEMENT: name=majorVersionOld (+)
+	+++  NEW METHOD: PUBLIC(+) int getMinorVersionNew()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+			+++  NEW ELEMENT: name=minorVersionNew (+)
+	+++  NEW METHOD: PUBLIC(+) int getMinorVersionOld()
+		+++  NEW ANNOTATION: javax.xml.bind.annotation.XmlAttribute
+			+++  NEW ELEMENT: name=minorVersionOld (+)
+	+++  NEW METHOD: PUBLIC(+) boolean isBinaryCompatible()
+	+++  NEW METHOD: PUBLIC(+) boolean isSourceCompatible()
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiClassType  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiClassType(com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiClassType(japicmp.util.Optional, japicmp.util.Optional, japicmp.model.JApiChangeStatus)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getNewTypeOptional()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldTypeOptional()
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiConstructor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	===! UNCHANGED INTERFACE: japicmp.model.JApiHasLineNumber
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiConstructor(japicmp.model.JApiClass, java.lang.String, japicmp.model.JApiChangeStatus, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.cmp.JarArchiveComparator)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiConstructor(japicmp.model.JApiClass, java.lang.String, japicmp.model.JApiChangeStatus, japicmp.util.Optional, japicmp.util.Optional, japicmp.cmp.JarArchiveComparator)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getNewConstructor()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldConstructor()
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiException  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiException(japicmp.cmp.JarArchiveComparator, java.lang.String, com.google.common.base.Optional, japicmp.model.JApiChangeStatus)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiException(japicmp.cmp.JarArchiveComparator, java.lang.String, japicmp.util.Optional, japicmp.model.JApiChangeStatus)
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiField  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiField(japicmp.model.JApiClass, japicmp.model.JApiChangeStatus, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.cmp.JarArchiveComparatorOptions)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiField(japicmp.model.JApiClass, japicmp.model.JApiChangeStatus, japicmp.util.Optional, japicmp.util.Optional, japicmp.cmp.JarArchiveComparatorOptions)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getNewFieldOptional()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldFieldOptional()
+***! MODIFIED INTERFACE: PUBLIC ABSTRACT japicmp.model.JApiHasLineNumber  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	***! MODIFIED METHOD: PUBLIC ABSTRACT japicmp.util.Optional (<-com.google.common.base.Optional) geNewLineNumber()
+	***! MODIFIED METHOD: PUBLIC ABSTRACT japicmp.util.Optional (<-com.google.common.base.Optional) getOldLineNumber()
+***! MODIFIED ENUM: PUBLIC STATIC FINAL japicmp.model.JApiJavaObjectSerializationCompatibility$JApiJavaObjectSerializationChangeStatus  (field removed)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED FIELD: PUBLIC(-) STATIC(-) FINAL(-) japicmp.model.JApiJavaObjectSerializationCompatibility$JApiJavaObjectSerializationChangeStatus SERIALIZABLE_INCOMPATIBLE_SERIALVERSIONUID_REMOVED_AND_NOT_MACHTES_NEW_DEFAULT
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiJavaObjectSerializationCompatibility$JApiJavaObjectSerializationChangeStatus SERIALIZABLE_INCOMPATIBLE_SERIALVERSIONUID_REMOVED_AND_NOT_MATCHES_NEW_DEFAULT
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiMethod  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	===! UNCHANGED INTERFACE: japicmp.model.JApiHasLineNumber
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiMethod(japicmp.model.JApiClass, java.lang.String, japicmp.model.JApiChangeStatus, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.cmp.JarArchiveComparator)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiMethod(japicmp.model.JApiClass, java.lang.String, japicmp.model.JApiChangeStatus, japicmp.util.Optional, japicmp.util.Optional, japicmp.cmp.JarArchiveComparator)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getNewMethod()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldMethod()
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiModifier  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiModifier(com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiModifier(japicmp.util.Optional, japicmp.util.Optional, japicmp.model.JApiChangeStatus)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getNewModifier()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldModifier()
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiReturnType  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiReturnType(japicmp.model.JApiChangeStatus, com.google.common.base.Optional, com.google.common.base.Optional)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiReturnType(japicmp.model.JApiChangeStatus, japicmp.util.Optional, japicmp.util.Optional)
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiSerialVersionUid  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiSerialVersionUid(boolean, boolean, com.google.common.base.Optional, com.google.common.base.Optional, com.google.common.base.Optional, com.google.common.base.Optional)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiSerialVersionUid(boolean, boolean, japicmp.util.Optional, japicmp.util.Optional, japicmp.util.Optional, japicmp.util.Optional)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getSerialVersionUidDefaultNew()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getSerialVersionUidDefaultOld()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getSerialVersionUidInClassNew()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getSerialVersionUidInClassOld()
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiSuperclass  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiSuperclass(japicmp.model.JApiClass, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus, japicmp.cmp.JarArchiveComparator)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiSuperclass(japicmp.model.JApiClass, japicmp.util.Optional, japicmp.util.Optional, japicmp.model.JApiChangeStatus, japicmp.cmp.JarArchiveComparator)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getJApiClass()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getNewSuperclass()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getNewSuperclassName()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldSuperclass()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldSuperclassName()
+***! MODIFIED CLASS: PUBLIC japicmp.model.JApiType  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JApiType(com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JApiType(japicmp.util.Optional, japicmp.util.Optional, japicmp.model.JApiChangeStatus)
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getNewTypeOptional()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getOldTypeOptional()
+***! MODIFIED CLASS: PUBLIC japicmp.model.JavaObjectSerializationCompatibility  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	***! MODIFIED FIELD: PRIVATE (<- PUBLIC) STATIC FINAL java.lang.String SERIAL_VERSION_UID
+	---! REMOVED METHOD: PUBLIC(-) STATIC(-) japicmp.model.JApiSerialVersionUid extractSerialVersionUid(japicmp.cmp.JarArchiveComparatorOptions, japicmp.cmp.JarArchiveComparator, com.google.common.base.Optional, com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.model.JApiSerialVersionUid extractSerialVersionUid(japicmp.cmp.JarArchiveComparatorOptions, japicmp.cmp.JarArchiveComparator, japicmp.util.Optional, japicmp.util.Optional)
+***! MODIFIED CLASS: PUBLIC japicmp.output.extapi.jpa.model.JpaName  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) JpaName(com.google.common.base.Optional, com.google.common.base.Optional, japicmp.model.JApiChangeStatus)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JpaName(japicmp.util.Optional, japicmp.util.Optional, japicmp.model.JApiChangeStatus)
+***! MODIFIED CLASS: PUBLIC japicmp.output.xml.model.JApiCmpXmlRoot  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getTitleOptional()
+	---! REMOVED METHOD: PUBLIC(-) void setTitleOptional(com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) void setTitleOptional(japicmp.util.Optional)
+***! MODIFIED CLASS: PUBLIC japicmp.output.xml.XmlOutput  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getHtmlOutputStream()
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getXmlOutputStream()
+	---! REMOVED METHOD: PUBLIC(-) void setHtmlOutputStream(com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) void setHtmlOutputStream(japicmp.util.Optional)
+	---! REMOVED METHOD: PUBLIC(-) void setXmlOutputStream(com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) void setXmlOutputStream(japicmp.util.Optional)
+***! MODIFIED CLASS: PUBLIC japicmp.output.xml.XmlOutputGeneratorOptions  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getTitle()
+***! MODIFIED CLASS: PUBLIC japicmp.util.AnnotationHelper  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED METHOD: PUBLIC(-) STATIC(-) void computeAnnotationChanges(java.util.List, com.google.common.base.Optional, com.google.common.base.Optional, japicmp.cmp.JarArchiveComparatorOptions, japicmp.util.AnnotationHelper$AnnotationsAttributeCallback)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void computeAnnotationChanges(java.util.List, japicmp.util.Optional, japicmp.util.Optional, japicmp.cmp.JarArchiveComparatorOptions, japicmp.util.AnnotationHelper$AnnotationsAttributeCallback)
+***  MODIFIED CLASS: PUBLIC japicmp.util.FileHelper  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.util.List createFileList(java.lang.String)
+***! MODIFIED CLASS: PUBLIC japicmp.util.ModifierHelper  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED METHOD: PUBLIC(-) STATIC(-) japicmp.model.JApiModifier extractModifierFromBehavior(com.google.common.base.Optional, com.google.common.base.Optional, japicmp.util.ModifierHelper$ExtractModifierFromBehaviorCallback)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.model.JApiModifier extractModifierFromBehavior(japicmp.util.Optional, japicmp.util.Optional, japicmp.util.ModifierHelper$ExtractModifierFromBehaviorCallback)
+	---! REMOVED METHOD: PUBLIC(-) STATIC(-) japicmp.model.JApiModifier extractModifierFromClass(com.google.common.base.Optional, com.google.common.base.Optional, japicmp.util.ModifierHelper$ExtractModifierFromClassCallback)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.model.JApiModifier extractModifierFromClass(japicmp.util.Optional, japicmp.util.Optional, japicmp.util.ModifierHelper$ExtractModifierFromClassCallback)
+	---! REMOVED METHOD: PUBLIC(-) STATIC(-) japicmp.model.JApiModifier extractModifierFromField(com.google.common.base.Optional, com.google.common.base.Optional, japicmp.util.ModifierHelper$ExtractModifierFromFieldCallback)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.model.JApiModifier extractModifierFromField(japicmp.util.Optional, japicmp.util.Optional, japicmp.util.ModifierHelper$ExtractModifierFromFieldCallback)
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) japicmp.util.Optional  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 51.0 <- -1.-1
 	+++  NEW SUPERCLASS: java.lang.Object
-	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.util.List toFileList(java.util.List)
-	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.util.List toVersionList(java.util.List)
-+++  NEW CLASS: PUBLIC(+) japicmp.versioning.SemanticVersion  (not serializable)
-	+++  NEW SUPERCLASS: java.lang.Object
-	+++  NEW CONSTRUCTOR: PUBLIC(+) SemanticVersion(int, int, int)
-	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional computeChangeType(japicmp.versioning.SemanticVersion)
-	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
-	+++  NEW METHOD: PUBLIC(+) int getMajor()
-	+++  NEW METHOD: PUBLIC(+) int getMinor()
-	+++  NEW METHOD: PUBLIC(+) int getPatch()
-	+++  NEW METHOD: PUBLIC(+) int hashCode()
-	+++  NEW METHOD: PUBLIC(+) java.lang.String toString()
-+++  NEW ENUM: PUBLIC(+) STATIC(+) FINAL(+) japicmp.versioning.SemanticVersion$ChangeType  (compatible)
-	+++  NEW INTERFACE: java.lang.Comparable
-	+++  NEW INTERFACE: java.io.Serializable
-	+++  NEW SUPERCLASS: java.lang.Enum
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.versioning.SemanticVersion$ChangeType UNCHANGED
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.versioning.SemanticVersion$ChangeType MAJOR
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.versioning.SemanticVersion$ChangeType MINOR
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.versioning.SemanticVersion$ChangeType PATCH
-	+++  NEW METHOD: PUBLIC(+) int getRank()
-	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.versioning.SemanticVersion$ChangeType valueOf(java.lang.String)
-	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.versioning.SemanticVersion$ChangeType[] values()
-+++  NEW CLASS: PUBLIC(+) japicmp.versioning.Version  (not serializable)
-	+++  NEW SUPERCLASS: java.lang.Object
-	+++  NEW CONSTRUCTOR: PUBLIC(+) Version(java.lang.String)
-	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional getSemanticVersion()
-	+++  NEW METHOD: PUBLIC(+) STATIC(+) com.google.common.base.Optional getSemanticVersion(java.lang.String)
-	+++  NEW METHOD: PUBLIC(+) java.lang.String getStringVersion()
-+++  NEW CLASS: PUBLIC(+) japicmp.versioning.VersionChange  (not serializable)
-	+++  NEW SUPERCLASS: java.lang.Object
-	+++  NEW CONSTRUCTOR: PUBLIC(+) VersionChange(java.util.List, java.util.List, boolean, boolean)
-	+++  NEW METHOD: PUBLIC(+) com.google.common.base.Optional computeChangeType()
-		+++  NEW EXCEPTION: japicmp.exception.JApiCmpException
-	+++  NEW METHOD: PUBLIC(+) boolean isAllMajorVersionsZero()
+	+++  NEW CONSTRUCTOR: PUBLIC(+) Optional()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.util.Optional absent()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.util.Optional fromNullable(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.Object get()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) boolean isPresent()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.util.Optional of(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) japicmp.util.Optional or(japicmp.util.Optional)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.Object or(java.lang.Object)
+***! MODIFIED CLASS: PUBLIC japicmp.util.OptionalHelper  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	---! REMOVED METHOD: PUBLIC(-) STATIC(-) java.lang.String optionalToString(com.google.common.base.Optional)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.String optionalToString(japicmp.util.Optional)
+***  MODIFIED CLASS: PUBLIC japicmp.util.StringArrayEnumeration  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	+++  NEW METHOD: PUBLIC(+) java.lang.String inspectNextElement()
+***! MODIFIED CLASS: PUBLIC japicmp.versioning.SemanticVersion  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) computeChangeType(japicmp.versioning.SemanticVersion)
+***! MODIFIED CLASS: PUBLIC japicmp.versioning.Version  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) getSemanticVersion()
+	***! MODIFIED METHOD: PUBLIC STATIC japicmp.util.Optional (<-com.google.common.base.Optional) getSemanticVersion(java.lang.String)
+***! MODIFIED CLASS: PUBLIC japicmp.versioning.VersionChange  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	***! MODIFIED METHOD: PUBLIC japicmp.util.Optional (<-com.google.common.base.Optional) computeChangeType()
+		===  UNCHANGED EXCEPTION: japicmp.exception.JApiCmpException
