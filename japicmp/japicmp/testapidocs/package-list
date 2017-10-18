@@ -1,0 +1,10 @@
+japicmp
+japicmp.cmp
+japicmp.compat
+japicmp.config
+japicmp.filter
+japicmp.output.semver
+japicmp.output.stdout
+japicmp.output.xml
+japicmp.util
+japicmp.versioning
