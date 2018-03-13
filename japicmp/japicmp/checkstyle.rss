@@ -23,10 +23,10 @@ under the License.
     <link>https://github.com/siom79/japicmp</link>
     <description>japicmp - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2017</copyright>
+    <copyright>&#169;2018</copyright>
     <item>
       <title>File: 102,
-             Errors: 4601,
+             Errors: 4615,
              Warnings: 0,
              Infos: 0
       </title>
@@ -195,7 +195,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  412
+                  423
                 </td>
               </tr>
                           <tr>
@@ -587,7 +587,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  456
+                  457
                 </td>
               </tr>
                           <tr>
@@ -895,7 +895,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  42
+                  41
                 </td>
               </tr>
                           <tr>
@@ -923,7 +923,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  213
+                  214
                 </td>
               </tr>
                           <tr>
@@ -951,7 +951,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  49
+                  51
                 </td>
               </tr>
                           <tr>

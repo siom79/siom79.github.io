@@ -1,0 +1,5 @@
+Comparing source compatibility of /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.11.1.jar against /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.11.0/japicmp-0.11.0.jar
+***  MODIFIED ENUM: PUBLIC FINAL japicmp.model.JApiCompatibilityChange  (compatible)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_ABSTRACT_NOW_DEFAULT
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_NEW_DEFAULT
