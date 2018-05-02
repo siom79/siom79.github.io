@@ -1,5 +1,20 @@
-Comparing source compatibility of /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.11.1.jar against /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.11.0/japicmp-0.11.0.jar
+Comparing source compatibility of /home/mmois/Programmierung/japicmp/target/checkout/japicmp/target/japicmp-0.12.0.jar against /home/mmois/.m2/repository/com/github/siom79/japicmp/japicmp/0.11.1/japicmp-0.11.1.jar
+***  MODIFIED CLASS: PUBLIC japicmp.cmp.JarArchiveComparatorOptions  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	+++  NEW METHOD: PUBLIC(+) void addOverrideCompatibilityChange(japicmp.cmp.JarArchiveComparatorOptions$OverrideCompatibilityChange)
+	+++  NEW METHOD: PUBLIC(+) java.util.List getOverrideCompatibilityChanges()
++++  NEW CLASS: PUBLIC(+) STATIC(+) japicmp.cmp.JarArchiveComparatorOptions$OverrideCompatibilityChange  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 51.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW CONSTRUCTOR: PUBLIC(+) JarArchiveComparatorOptions$OverrideCompatibilityChange(japicmp.model.JApiCompatibilityChange, boolean, boolean)
+	+++  NEW METHOD: PUBLIC(+) japicmp.model.JApiCompatibilityChange getCompatibilityChange()
+	+++  NEW METHOD: PUBLIC(+) boolean isBinaryCompatible()
+	+++  NEW METHOD: PUBLIC(+) boolean isSourceCompatible()
+***  MODIFIED CLASS: PUBLIC japicmp.exception.JApiCmpException  (compatible)
+	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) japicmp.exception.JApiCmpException forClassLoading(java.lang.String, japicmp.cmp.JarArchiveComparator)
 ***  MODIFIED ENUM: PUBLIC FINAL japicmp.model.JApiCompatibilityChange  (compatible)
 	===  CLASS FILE FORMAT VERSION: 51.0 <- 51.0
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_ABSTRACT_NOW_DEFAULT
-	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) japicmp.model.JApiCompatibilityChange METHOD_NEW_DEFAULT
+	+++  NEW METHOD: PUBLIC(+) void resetOverrides()
+	+++  NEW METHOD: PUBLIC(+) void setBinaryCompatible(boolean)
+	+++  NEW METHOD: PUBLIC(+) void setSourceCompatible(boolean)
