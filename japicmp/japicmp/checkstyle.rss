@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2018</copyright>
     <item>
-      <title>File: 102,
-             Errors: 4678,
+      <title>File: 104,
+             Errors: 5092,
              Warnings: 0,
              Infos: 0
       </title>
@@ -83,7 +83,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  24
+                  25
                 </td>
               </tr>
                           <tr>
@@ -97,7 +97,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  69
+                  72
                 </td>
               </tr>
                           <tr>
@@ -111,7 +111,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  224
+                  227
                 </td>
               </tr>
                           <tr>
@@ -195,12 +195,12 @@ under the License.
                   0
                 </td>
                 <td>
-                  426
+                  434
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.filter.Filters.java">japicmp/filter/Filters.java</a>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.JApiSemanticVersionLevel.java">japicmp/model/JApiSemanticVersionLevel.java</a>
                 </td>
                 <td>
                   0
@@ -209,7 +209,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  34
+                  10
                 </td>
               </tr>
                           <tr>
@@ -228,7 +228,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.cmp.JarArchiveComparator.java">japicmp/cmp/JarArchiveComparator.java</a>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.filter.Filters.java">japicmp/filter/Filters.java</a>
                 </td>
                 <td>
                   0
@@ -237,7 +237,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  158
+                  34
                 </td>
               </tr>
                           <tr>
@@ -256,6 +256,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.cmp.JarArchiveComparator.java">japicmp/cmp/JarArchiveComparator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  158
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.output.semver.SemverOut.java">japicmp/output/semver/SemverOut.java</a>
                 </td>
                 <td>
@@ -265,7 +279,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  59
+                  61
                 </td>
               </tr>
                           <tr>
@@ -293,21 +307,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  216
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.filter.FieldFilter.java">japicmp/filter/FieldFilter.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
+                  276
                 </td>
               </tr>
                           <tr>
@@ -321,12 +321,26 @@ under the License.
                   0
                 </td>
                 <td>
-                  25
+                  24
                 </td>
               </tr>
                           <tr>
                 <td>
                   <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.FinalModifier.java">japicmp/model/FinalModifier.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.filter.FieldFilter.java">japicmp/filter/FieldFilter.java</a>
                 </td>
                 <td>
                   0
@@ -433,35 +447,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  69
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.util.StringArrayEnumeration.java">japicmp/util/StringArrayEnumeration.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  13
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.versioning.SemanticVersion.java">japicmp/versioning/SemanticVersion.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  41
+                  72
                 </td>
               </tr>
                           <tr>
@@ -480,6 +466,34 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.versioning.SemanticVersion.java">japicmp/versioning/SemanticVersion.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  40
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.util.StringArrayEnumeration.java">japicmp/util/StringArrayEnumeration.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  13
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.util.ClassHelper.java">japicmp/util/ClassHelper.java</a>
                 </td>
                 <td>
@@ -489,12 +503,26 @@ under the License.
                   0
                 </td>
                 <td>
-                  7
+                  6
                 </td>
               </tr>
                           <tr>
                 <td>
                   <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.StaticModifier.java">japicmp/model/StaticModifier.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.SyntheticModifier.java">japicmp/model/SyntheticModifier.java</a>
                 </td>
                 <td>
                   0
@@ -518,20 +546,6 @@ under the License.
                 </td>
                 <td>
                   8
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.SyntheticModifier.java">japicmp/model/SyntheticModifier.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
                 </td>
               </tr>
                           <tr>
@@ -587,7 +601,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  457
+                  460
                 </td>
               </tr>
                           <tr>
@@ -606,20 +620,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.filter.ClassFilter.java">japicmp/filter/ClassFilter.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.JApiHasAnnotations.java">japicmp/model/JApiHasAnnotations.java</a>
                 </td>
                 <td>
@@ -630,6 +630,20 @@ under the License.
                 </td>
                 <td>
                   2
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.filter.ClassFilter.java">japicmp/filter/ClassFilter.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
                 </td>
               </tr>
                           <tr>
@@ -657,7 +671,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  19
+                  22
                 </td>
               </tr>
                           <tr>
@@ -713,7 +727,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  115
+                  121
                 </td>
               </tr>
                           <tr>
@@ -755,26 +769,26 @@ under the License.
                   0
                 </td>
                 <td>
-                  66
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.util.ListJoiner.java">japicmp/util/ListJoiner.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  27
+                  71
                 </td>
               </tr>
                           <tr>
                 <td>
                   <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.util.SignatureParser.java">japicmp/util/SignatureParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  28
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.util.ListJoiner.java">japicmp/util/ListJoiner.java</a>
                 </td>
                 <td>
                   0
@@ -839,7 +853,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  12
+                  13
                 </td>
               </tr>
                           <tr>
@@ -895,7 +909,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  49
+                  50
                 </td>
               </tr>
                           <tr>
@@ -937,7 +951,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  19
+                  22
                 </td>
               </tr>
                           <tr>
@@ -951,7 +965,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  60
+                  86
                 </td>
               </tr>
                           <tr>
@@ -965,7 +979,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  72
+                  80
                 </td>
               </tr>
                           <tr>
@@ -979,21 +993,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  13
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.filter.JavaDocLikeClassFilter.java">japicmp/filter/JavaDocLikeClassFilter.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  10
+                  14
                 </td>
               </tr>
                           <tr>
@@ -1012,6 +1012,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.filter.JavaDocLikeClassFilter.java">japicmp/filter/JavaDocLikeClassFilter.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.JApiImplementedInterface.java">japicmp/model/JApiImplementedInterface.java</a>
                 </td>
                 <td>
@@ -1021,7 +1035,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  34
+                  38
                 </td>
               </tr>
                           <tr>
@@ -1035,7 +1049,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  3
+                  2
                 </td>
               </tr>
                           <tr>
@@ -1091,7 +1105,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  119
+                  118
                 </td>
               </tr>
                           <tr>
@@ -1147,7 +1161,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  187
+                  247
                 </td>
               </tr>
                           <tr>
@@ -1194,20 +1208,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.BridgeModifier.java">japicmp/model/BridgeModifier.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.JApiAnnotationElementValue.java">japicmp/model/JApiAnnotationElementValue.java</a>
                 </td>
                 <td>
@@ -1218,6 +1218,20 @@ under the License.
                 </td>
                 <td>
                   75
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.BridgeModifier.java">japicmp/model/BridgeModifier.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
                 </td>
               </tr>
                           <tr>
@@ -1245,7 +1259,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  39
+                  42
                 </td>
               </tr>
                           <tr>
@@ -1301,7 +1315,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  4
+                  3
                 </td>
               </tr>
                           <tr>
@@ -1334,6 +1348,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.output.incompatible.IncompatibleErrorOutput.java">japicmp/output/incompatible/IncompatibleErrorOutput.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  204
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.JApiHasBridgeModifier.java">japicmp/model/JApiHasBridgeModifier.java</a>
                 </td>
                 <td>
@@ -1362,20 +1390,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.cmp.ClassesComparator.java">japicmp/cmp/ClassesComparator.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  43
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.model.JApiHasModifiers.java">japicmp/model/JApiHasModifiers.java</a>
                 </td>
                 <td>
@@ -1386,6 +1400,20 @@ under the License.
                 </td>
                 <td>
                   3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.cmp.ClassesComparator.java">japicmp/cmp/ClassesComparator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  43
                 </td>
               </tr>
                           <tr>
@@ -1469,7 +1497,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  26
+                  27
                 </td>
               </tr>
                       </tbody>

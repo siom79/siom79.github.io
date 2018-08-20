@@ -26,7 +26,7 @@ under the License.
     <copyright>&#169;2018</copyright>
     <item>
       <title>File: 11,
-             Errors: 1298,
+             Errors: 1157,
              Warnings: 0,
              Infos: 0
       </title>
@@ -55,7 +55,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  280
+                  287
                 </td>
               </tr>
                           <tr>
@@ -74,6 +74,34 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.maven.PluginParameters.java">japicmp/maven/PluginParameters.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  68
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.maven.JApiCmpMojo.java">japicmp/maven/JApiCmpMojo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  511
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.maven.VersionChange.java">japicmp/maven/VersionChange.java</a>
                 </td>
                 <td>
@@ -88,34 +116,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.maven.JApiCmpMojo.java">japicmp/maven/JApiCmpMojo.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  659
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.maven.PluginParameters.java">japicmp/maven/PluginParameters.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  67
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/siom79/japicmp/checkstyle.html#japicmp.maven.JApiCmpReport.java">japicmp/maven/JApiCmpReport.java</a>
                 </td>
                 <td>
@@ -125,7 +125,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  64
+                  63
                 </td>
               </tr>
                           <tr>

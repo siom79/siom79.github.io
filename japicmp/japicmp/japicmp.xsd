@@ -387,12 +387,14 @@
 
   <xs:simpleType name="jApiCompatibilityChange">
     <xs:restriction base="xs:string">
+      <xs:enumeration value="ANNOTATION_DEPRECATED_ADDED"/>
       <xs:enumeration value="CLASS_REMOVED"/>
       <xs:enumeration value="CLASS_NOW_ABSTRACT"/>
       <xs:enumeration value="CLASS_NOW_FINAL"/>
       <xs:enumeration value="CLASS_NO_LONGER_PUBLIC"/>
       <xs:enumeration value="CLASS_TYPE_CHANGED"/>
       <xs:enumeration value="CLASS_NOW_CHECKED_EXCEPTION"/>
+      <xs:enumeration value="CLASS_LESS_ACCESSIBLE"/>
       <xs:enumeration value="SUPERCLASS_REMOVED"/>
       <xs:enumeration value="SUPERCLASS_ADDED"/>
       <xs:enumeration value="SUPERCLASS_MODIFIED_INCOMPATIBLE"/>
