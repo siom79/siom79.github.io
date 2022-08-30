@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20220830" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>japicmp-base &#x2013; </title>
+    <title>japicmp-base &#x2013; japicmp</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.7.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -33,7 +33,7 @@
       <div id="breadcrumbs">
         <ul class="breadcrumb">
       <li class=""><a href="https://siom79.github.io/japicmp" class="externalLink" title="japicmp">japicmp</a><span class="divider">/</span></li>
-    <li class="active "></li>
+    <li class="active ">japicmp</li>
         <li id="publishDate" class="pull-right"><span class="divider">|</span> Last Published: 2022-08-30</li>
           <li id="projectVersion" class="pull-right">Version: 0.16.0</li>
         </ul>
@@ -61,7 +61,7 @@
           </div>
         </div>
         <div id="bodyColumn"  class="span10" >
-<p>#japicmp#</p>
+<h1>japicmp</h1>
 <p>japicmp is a tool to compare two versions of a jar archive:</p>
 
 <div class="source"><pre class="prettyprint"><code>java -jar japicmp-0.16.0-jar-with-dependencies.jar -n new-version.jar -o old-version.jar
@@ -126,8 +126,8 @@ List&lt;JApiClass&gt; jApiClasses = jarArchiveComparator.compare(oldArchives, ne
 	 onlyModifications=&quot;true&quot;
 	 /&gt;
 </code></pre></div>
-<p><a class="externalLink" href="https://github.com/melix">melix</a> has developed a <a class="externalLink" href="https://github.com/melix/japicmp-gradle-plugin">gradle plugin</a> for japicmp.</p>
-<p>##Motivation##</p>
+<p><a class="externalLink" href="https://github.com/melix">melix</a> has developed a <a class="externalLink" href="https://github.com/melix/japicmp-gradle-plugin">gradle plugin</a> for japicmp.</p><section>
+<h2><a name="Motivation"></a>Motivation</h2>
 <p>Every time you release a new version of a library or a product, you have to tell your clients or customers what
 has changed in comparison to the last release. Without the appropriate tooling, this task is tedious and error-prone.
 This tool/library helps you to determine the differences between the java class files that are contained in two given
@@ -143,8 +143,8 @@ The comparison of annotations makes this approach suitable for annotation-based 
 <p>The goal of this project is to provide a fast and easy to use API comparison for Java. Therefore it does not aim
 to integrate change tracking of other types of artifacts (configuration files, etc.) as a generic implementation means
 to make compromises in terms of performance and ease of usage. japicmp for example compares two archives with about 1700 classes each
-in less than one second and therewith can be easily integrated in each build.</p>
-<p>##Features##</p>
+in less than one second and therewith can be easily integrated in each build.</p></section><section>
+<h2><a name="Features"></a>Features</h2>
 <ul>
 
 <li>Comparison of two jar archives without the need to add all of their dependencies to the classpath.</li>
@@ -160,12 +160,12 @@ compared can be set to public, protected, package or private.</li>
 <li>If a class is serializable, changes are evaluated regarding the <a class="externalLink" href="http://docs.oracle.com/javase/7/docs/platform/serialization/spec/serialTOC.html">Java Object Serialization Specification</a>.</li>
 <li>Per default synthetic classes and class members (e.g. <a class="externalLink" href="https://docs.oracle.com/javase/tutorial/java/generics/bridgeMethods.html">bridge methods</a>) are hidden. They can be listed by using the option <code>--include-synthetic</code>.</li>
 <li>The maven plugin allows project-specific filtering and reports using a custom <a href="groovy-lang.org">Groovy</a> script.</li>
-</ul>
-<p>##Downloads##</p>
-<p>You can download the latest version from the <a class="externalLink" href="https://github.com/siom79/japicmp/releases">release page</a> or directly from the <a class="externalLink" href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22japicmp%22">maven central repository</a>.</p>
-<p>##Contact##</p>
-<p>The issue tracker at <a class="externalLink" href="https://github.com/siom79/japicmp/issues">github</a> can be used to submit feature requests or bugs. Beyond that contributions in form of pull requests are highly appreciated.</p>
-<p>##Related work##</p>
+</ul></section><section>
+<h2><a name="Downloads"></a>Downloads</h2>
+<p>You can download the latest version from the <a class="externalLink" href="https://github.com/siom79/japicmp/releases">release page</a> or directly from the <a class="externalLink" href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22japicmp%22">maven central repository</a>.</p></section><section>
+<h2><a name="Contact"></a>Contact</h2>
+<p>The issue tracker at <a class="externalLink" href="https://github.com/siom79/japicmp/issues">github</a> can be used to submit feature requests or bugs. Beyond that contributions in form of pull requests are highly appreciated.</p></section><section>
+<h2><a name="Related_work"></a>Related work</h2>
 <p>The following projects have related goals:</p>
 <ul>
 
@@ -173,7 +173,7 @@ compared can be set to public, protected, package or private.</li>
 <li><a class="externalLink" href="http://clirr.sourceforge.net/">Clirr</a>: A tool written in Java that compares two libraries for binary compatibility. Tracking of API changes is implemented only partially, tracking of annotations is not supported. Development has stopped around 2005.</li>
 <li><a class="externalLink" href="http://javadiff.sourceforge.net/">JDiff</a>: A Javadoc doclet that generates an HTML report of all API changes. The source code for both versions has to be available, the differences are not distinguished between binary incompatible or not. Comparison of annotations is not supported.</li>
 <li><a class="externalLink" href="http://revapi.org/">revapi</a>: An API analysis and change tracking tool that was started about the same time as japicmp. It ships with a maven plugin and an Ant task, but the maven plugin currently (version 0.4.1) only reports changes on the command line.</li>
-</ul>
+</ul></section>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20220830" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>japicmp-base &#x2013; </title>
+    <title>japicmp-base &#x2013; Maven Plugin</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.7.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -33,7 +33,7 @@
       <div id="breadcrumbs">
         <ul class="breadcrumb">
       <li class=""><a href="https://siom79.github.io/japicmp" class="externalLink" title="japicmp">japicmp</a><span class="divider">/</span></li>
-    <li class="active "></li>
+    <li class="active ">Maven Plugin</li>
         <li id="publishDate" class="pull-right"><span class="divider">|</span> Last Published: 2022-08-30</li>
           <li id="projectVersion" class="pull-right">Version: 0.16.0</li>
         </ul>
@@ -61,8 +61,8 @@
           </div>
         </div>
         <div id="bodyColumn"  class="span10" >
-<p>#Maven Plugin#</p>
-<p>##Basic Usage##</p>
+<h1>Maven Plugin</h1><section>
+<h2><a name="Basic_Usage"></a>Basic Usage</h2>
 <p>The maven plugin can be included in the pom.xml file of your artifact in the following way (requires maven &gt;= 3.0.3):</p>
 
 <div class="source"><pre class="prettyprint"><code>&lt;plugin&gt;
@@ -139,8 +139,8 @@ to configure the latest version more precisely (e.g. only GA versions), then you
 		&lt;/execution&gt;
 	&lt;/executions&gt;
 &lt;/plugin&gt;
-</code></pre></div>
-<p>##Properties##</p>
+</code></pre></div></section><section>
+<h2><a name="Properties"></a>Properties</h2>
 <p>The following properties can be set:</p>
 <table border="0" class="table table-striped">
 <thead>
@@ -175,8 +175,8 @@ to configure the latest version more precisely (e.g. only GA versions), then you
 <td align="left">japicmp.breakBuildBasedOnSemanticVersioningForMajorVersionZero</td>
 <td>Break the build in case of semantic versioning used with zero as major version number is violated.</td></tr>
 </tbody>
-</table>
-<p>##Advanced Usage##</p>
+</table></section><section>
+<h2><a name="Advanced_Usage"></a>Advanced Usage</h2>
 <p>An advanced configuration can utilize the following parameters:</p>
 
 <div class="source"><pre class="prettyprint"><code>&lt;build&gt;
@@ -757,8 +757,8 @@ are appended to the classpath before the ones from the enclosing pom.xml, hence 
 </code></pre></div>
 <p>The maven plugin produces the two files <code>japicmp.diff</code> and <code>japicmp.xml</code> within the directory <code>${project.build.directory}/japicmp</code>
 of your artifact. If you run the plugin multiple times within the same module using the &lt;executions&gt; element, the reports
-are named after the execution id.</p>
-<p>##Site report##</p>
+are named after the execution id.</p></section><section>
+<h2><a name="Site_report"></a>Site report</h2>
 <p>Alternatively it can be used inside the <code>&lt;reporting/&gt;</code> tag in order to be invoked by the
 <a class="externalLink" href="https://maven.apache.org/plugins/maven-site-plugin/">maven-site-plugin</a> and therewith to be integrated into the site report:</p>
 
@@ -812,8 +812,8 @@ are named after the execution id.</p>
 	...
 &lt;/configuration&gt;
 </code></pre></div>
-<p>The configuration above will create one report for all the declared dependencies.</p>
-<p>##Using Groovy scripts for post analysis##</p>
+<p>The configuration above will create one report for all the declared dependencies.</p></section><section>
+<h2><a name="Using_Groovy_scripts_for_post_analysis"></a>Using Groovy scripts for post analysis</h2>
 <p>The parameter &lt;postAnalysisScript/&gt; can be used to invoke a <a class="externalLink" href="http://www.groovy-lang.org/">Groovy</a> script after the analysis but before the output is written.
 This is helpful if you want to apply some custom filtering that is not possible with the standard means of japicmp. The following script for example filters out
 all classes that reside within the package <code>japicmp.test.annotation</code> and all methods that start with <code>get...()</code> and <code>set...()</code>.</p>
@@ -875,7 +875,7 @@ containing the script as dependency to the japicmp-plugin:</p>
 		&lt;/dependency&gt;
 	&lt;/dependencies&gt;
 &lt;/plugin&gt;
-</code></pre></div>
+</code></pre></div></section>
         </div>
       </div>
     </div>
