@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReferenceResolver.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">io.github.siom79.jasyncapicmp:jasyncapicmp</a> &gt; <a href="index.source.html" class="el_package">jasyncapicmp.parser</a> &gt; <span class="el_source">ReferenceResolver.java</span></div><h1>ReferenceResolver.java</h1><pre class="source lang-java linenums">package jasyncapicmp.parser;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import jasyncapicmp.JAsyncApiCmpUserException;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+<span class="fc" id="L11">public class ReferenceResolver {</span>
+    public static final String PATH_SEPARATOR = &quot;/&quot;;
+<span class="fc" id="L13">    Map&lt;String, String&gt; resolvedPaths = new HashMap&lt;&gt;();</span>
+
+    public JsonNode resolveRefs(JsonNode jsonNode) {
+<span class="fc" id="L16">        return resolveRefsRecursive(jsonNode, jsonNode, &quot;&quot;);</span>
+    }
+
+    private JsonNode resolveRefsRecursive(JsonNode rootNode, JsonNode jsonNode, String path) {
+<span class="fc" id="L20">        Iterator&lt;Map.Entry&lt;String, JsonNode&gt;&gt; fields = jsonNode.fields();</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        while (fields.hasNext()) {</span>
+<span class="fc" id="L22">            Map.Entry&lt;String, JsonNode&gt; entry = fields.next();</span>
+<span class="fc" id="L23">            String fieldName = entry.getKey();</span>
+<span class="fc" id="L24">            JsonNode fieldValue = entry.getValue();</span>
+<span class="fc" id="L25">            String newPath = path + PATH_SEPARATOR + fieldName;</span>
+<span class="pc bpc" id="L26" title="1 of 4 branches missed.">            if (&quot;$ref&quot;.equals(fieldName) &amp;&amp; fieldValue.isTextual()) {</span>
+<span class="fc" id="L27">                String jsonPtrExpr = fieldValue.textValue();</span>
+<span class="fc" id="L28">                int indexSeparator = jsonPtrExpr.indexOf('#');</span>
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">                if (indexSeparator &gt;= 0) {</span>
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">                    if (jsonPtrExpr.length() &gt;= (indexSeparator + 2)) {</span>
+<span class="fc" id="L31">                        jsonPtrExpr = jsonPtrExpr.substring(indexSeparator + 1);</span>
+                    } else {
+<span class="nc" id="L33">                        throw new JAsyncApiCmpUserException(&quot;Reference too short: &quot; + jsonPtrExpr);</span>
+                    }
+                }
+<span class="fc" id="L36">                JsonNode resolved = rootNode.at(jsonPtrExpr);</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">                if (resolved.isMissingNode()) {</span>
+<span class="nc" id="L38">                    throw new JAsyncApiCmpUserException(&quot;Unresolvable reference: &quot; + jsonPtrExpr);</span>
+                }
+<span class="fc" id="L40">                resolveRefsRecursive(rootNode, resolved, newPath);</span>
+<span class="fc" id="L41">                incorporateResolved(jsonNode, resolved);</span>
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">            } else if (!resolvedPaths.containsKey(newPath)) {</span>
+<span class="fc" id="L43">                resolveRefsRecursive(rootNode, fieldValue, newPath);</span>
+<span class="fc" id="L44">                resolvedPaths.put(newPath, newPath);</span>
+            }
+<span class="fc" id="L46">        }</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (jsonNode.isArray()) {</span>
+<span class="fc" id="L48">            Iterator&lt;JsonNode&gt; elements = jsonNode.elements();</span>
+<span class="fc" id="L49">            int count = 0;</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">            while(elements.hasNext()) {</span>
+<span class="fc" id="L51">                JsonNode nextNode = elements.next();</span>
+<span class="fc" id="L52">                String newPath = path + PATH_SEPARATOR + count;</span>
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">                if (!resolvedPaths.containsKey(newPath)) {</span>
+<span class="fc" id="L54">                    resolveRefsRecursive(rootNode, nextNode, newPath);</span>
+<span class="fc" id="L55">                    resolvedPaths.put(newPath, newPath);</span>
+                }
+<span class="fc" id="L57">                count++;</span>
+<span class="fc" id="L58">            }</span>
+        }
+<span class="fc" id="L60">        return rootNode;</span>
+    }
+
+    private void incorporateResolved(JsonNode jsonNode, JsonNode resolved) {
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (resolved.isObject()) {</span>
+<span class="fc" id="L65">            ObjectNode objectNode = (ObjectNode) jsonNode;</span>
+<span class="fc" id="L66">            Iterator&lt;Map.Entry&lt;String, JsonNode&gt;&gt; fields = resolved.fields();</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">            while (fields.hasNext()) {</span>
+<span class="fc" id="L68">                Map.Entry&lt;String, JsonNode&gt; entry = fields.next();</span>
+<span class="fc" id="L69">                objectNode.set(entry.getKey(), entry.getValue());</span>
+<span class="fc" id="L70">            }</span>
+        }
+<span class="fc" id="L72">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

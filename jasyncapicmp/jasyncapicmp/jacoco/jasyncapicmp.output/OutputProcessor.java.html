@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OutputProcessor.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">io.github.siom79.jasyncapicmp:jasyncapicmp</a> &gt; <a href="index.source.html" class="el_package">jasyncapicmp.output</a> &gt; <span class="el_source">OutputProcessor.java</span></div><h1>OutputProcessor.java</h1><pre class="source lang-java linenums">package jasyncapicmp.output;
+
+import jasyncapicmp.JAsyncApiCmpTechnicalException;
+import jasyncapicmp.cmp.ChangeStatus;
+import jasyncapicmp.cmp.diff.*;
+import jasyncapicmp.model.AsyncApi;
+import jasyncapicmp.model.Model;
+
+import java.lang.reflect.Field;
+import java.util.List;
+import java.util.Map;
+
+public class OutputProcessor {
+
+    private final OutputSink ot;
+
+<span class="fc" id="L17">    public OutputProcessor(OutputSink outputSink) {</span>
+<span class="fc" id="L18">        this.ot = outputSink;</span>
+<span class="fc" id="L19">    }</span>
+
+    public void process(ObjectDiff objectDiff) {
+<span class="fc" id="L22">        printTopLevel(ot, objectDiff, new Indent(0, false));</span>
+<span class="fc" id="L23">    }</span>
+
+    private void printTopLevel(OutputSink ot, ObjectDiff objectDiff, Indent indent) {
+<span class="fc" id="L26">        Field[] declaredFields = AsyncApi.class.getDeclaredFields();</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        for (Field field : declaredFields) {</span>
+<span class="fc" id="L28">            Class&lt;?&gt; type = field.getType();</span>
+<span class="fc" id="L29">            String name = field.getName();</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">            if (type == String.class) {</span>
+<span class="fc" id="L31">				StringDiff stringDiff = objectDiff.getStringDiffs().get(name);</span>
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">				if (stringDiff != null) {</span>
+<span class="fc" id="L33">					printStringDiff(ot, indent, name, stringDiff);</span>
+				}
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">			} else if (type == int.class) {</span>
+<span class="nc" id="L36">				IntegerDiff integerDiff = objectDiff.getIntegerDiffs().get(name);</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">				if (integerDiff != null) {</span>
+<span class="nc" id="L38">					printIntegerDiff(ot, indent, name, integerDiff);</span>
+				}
+<span class="pc bfc" id="L40" title="All 2 branches covered.">			} else if (type == Map.class) {</span>
+<span class="fc" id="L41">                MapDiff mapDiff = objectDiff.getMapDiffs().get(name);</span>
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">                if (mapDiff != null) {</span>
+<span class="fc" id="L43">                    printMapDiff(ot, indent, name, mapDiff);</span>
+                }
+<span class="fc bfc" id="L45" title="All 2 branches covered.">            } else if (type == List.class) {</span>
+<span class="fc" id="L46">                ListDiff listDiff = objectDiff.getListDiffs().get(name);</span>
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">                if (listDiff != null) {</span>
+<span class="fc" id="L48">                    printListDiff(ot, indent, name, listDiff);</span>
+                }
+<span class="fc" id="L50">            } else {</span>
+<span class="fc" id="L51">                ObjectDiff objectDiff1 = objectDiff.getObjectDiffs().get(name);</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">                if (objectDiff1 != null) {</span>
+<span class="fc" id="L53">                    printObjectDiff(ot, indent, name, objectDiff1);</span>
+                }
+            }
+        }
+<span class="fc" id="L57">    }</span>
+
+	private void process(OutputSink ot, ObjectDiff objectDiff, Indent indent) {
+<span class="fc" id="L60">		boolean printRef = printRefField(ot, indent, objectDiff);</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">		if (!printRef) {</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">			for (Map.Entry&lt;String, StringDiff&gt; stringDiff : objectDiff.getStringDiffs().entrySet()) {</span>
+<span class="fc" id="L63">				String key = stringDiff.getKey();</span>
+<span class="fc" id="L64">				StringDiff value = stringDiff.getValue();</span>
+<span class="fc" id="L65">				printStringDiff(ot, indent, key, value);</span>
+<span class="fc" id="L66">			}</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">			for (Map.Entry&lt;String, ObjectDiff&gt; objectDiffEntry : objectDiff.getObjectDiffs().entrySet()) {</span>
+<span class="fc" id="L68">				printObjectDiff(ot, indent, objectDiffEntry.getKey(), objectDiffEntry.getValue());</span>
+<span class="fc" id="L69">			}</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">			for (Map.Entry&lt;String, MapDiff&gt; mapDiffEntry : objectDiff.getMapDiffs().entrySet()) {</span>
+<span class="fc" id="L71">				printMapDiff(ot, indent, mapDiffEntry.getKey(), mapDiffEntry.getValue());</span>
+<span class="fc" id="L72">			}</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">			for (Map.Entry&lt;String, ListDiff&gt; listDiffEntry : objectDiff.getListDiffs().entrySet()) {</span>
+<span class="fc" id="L74">				printListDiff(ot, indent, listDiffEntry.getKey(), listDiffEntry.getValue());</span>
+<span class="fc" id="L75">			}</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">			if (objectDiff.getChangeStatus() == ChangeStatus.ADDED) {</span>
+<span class="fc" id="L77">				printModel(ot, indent, objectDiff.getNewValue(), objectDiff.getChangeStatus());</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">			} else if (objectDiff.getChangeStatus() == ChangeStatus.REMOVED) {</span>
+<span class="fc" id="L79">				printModel(ot, indent, objectDiff.getOldValue(), objectDiff.getChangeStatus());</span>
+			}
+		}
+<span class="fc" id="L82">    }</span>
+
+	private boolean printRefField(OutputSink ot, Indent indent, ObjectDiff objectDiff) {
+<span class="fc" id="L85">		StringDiff stringDiff = objectDiff.getStringDiffs().get(&quot;ref&quot;);</span>
+<span class="fc bfc" id="L86" title="All 4 branches covered.">		if (stringDiff != null &amp;&amp; !stringDiff.isNull()) {</span>
+<span class="fc" id="L87">			ot.stringDiff(indent, &quot;ref&quot;, stringDiff.getOldValue(), stringDiff.getNewValue(), stringDiff.getChangeStatus(), null);</span>
+<span class="fc" id="L88">			return true;</span>
+		}
+<span class="fc" id="L90">		return false;</span>
+	}
+
+	private void printListDiff(OutputSink ot, Indent indent, String key, ListDiff listDiff) {
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        if (!listDiff.isEmpty()) {</span>
+<span class="fc" id="L95">            ot.listDiffStart(indent, key, listDiff.getChangeStatus());</span>
+<span class="fc bfc" id="L96" title="All 2 branches covered.">            for (ListDiff.ListDiffEntry&lt;?&gt; listDiffEntry : listDiff.getListDiffsEntries()) {</span>
+<span class="fc" id="L97">                printListDiffEntries(ot, indent.incDefault(), listDiffEntry);</span>
+<span class="fc" id="L98">            }</span>
+        }
+<span class="fc" id="L100">    }</span>
+
+    private void printListDiffEntries(OutputSink ot, Indent indent, ListDiff.ListDiffEntry&lt;?&gt; listDiffEntry) {
+<span class="fc bfc" id="L103" title="All 2 branches covered.">        if (listDiffEntry.getType() == ListDiff.ListDiffEntryType.STRING) {</span>
+<span class="pc bpc" id="L104" title="2 of 3 branches missed.">            switch (listDiffEntry.getChangeStatus()) {</span>
+				case UNCHANGED:
+				case ADDED:
+<span class="fc" id="L107">                        ot.listDiffEntryString(indent, listDiffEntry.getNewValue(), listDiffEntry.getChangeStatus(), listDiffEntry);</span>
+<span class="fc" id="L108">						break;</span>
+				case REMOVED:
+<span class="nc" id="L110">                        ot.listDiffEntryString(indent, listDiffEntry.getOldValue(), listDiffEntry.getChangeStatus(), listDiffEntry);</span>
+<span class="fc" id="L111">						break;</span>
+            }
+<span class="pc bpc" id="L113" title="1 of 2 branches missed.">        } else if (listDiffEntry.getType() == ListDiff.ListDiffEntryType.MODEL) {</span>
+<span class="fc" id="L114">            ot.listDiffModelStart(indent);</span>
+<span class="fc" id="L115">            ObjectDiff objectDiff = listDiffEntry.getObjectDiff();</span>
+<span class="pc bpc" id="L116" title="1 of 2 branches missed.">            if (!objectDiff.isNull()) {</span>
+<span class="fc" id="L117">                printObjectDiff(ot, indent.incListIndent().nextTimeNoIndent(), objectDiff);</span>
+            }
+        }
+<span class="fc" id="L120">    }</span>
+
+    private void printMapDiff(OutputSink ot, Indent indent, String key, MapDiff mapDiff) {
+<span class="fc bfc" id="L123" title="All 2 branches covered.">        if (!mapDiff.isEmpty()) {</span>
+<span class="fc" id="L124">            ot.mapDiffStart(indent, key, mapDiff.getChangeStatus());</span>
+<span class="fc bfc" id="L125" title="All 2 branches covered.">            for (Map.Entry&lt;String, MapDiff.MapDiffEntry&gt; mapDiffEntry : mapDiff.getMapDiffEntries().entrySet()) {</span>
+<span class="fc" id="L126">                printMapDiffEntries(ot, indent.incDefault(), mapDiffEntry.getKey(), mapDiffEntry.getValue());</span>
+<span class="fc" id="L127">            }</span>
+        }
+<span class="fc" id="L129">    }</span>
+
+    private void printMapDiffEntries(OutputSink ot, Indent indent, String key, MapDiff.MapDiffEntry mapDiffEntry) {
+<span class="fc" id="L132">        ot.mapDiffEntry(indent, key, mapDiffEntry.getChangeStatus(), mapDiffEntry);</span>
+<span class="fc" id="L133">        ObjectDiff objectDiff = mapDiffEntry.getObjectDiff();</span>
+<span class="pc bpc" id="L134" title="1 of 2 branches missed.">        if (!objectDiff.isNull()) {</span>
+<span class="fc" id="L135">            process(ot, objectDiff, indent.incDefault());</span>
+        }
+<span class="fc" id="L137">    }</span>
+
+    private void printObjectDiff(OutputSink ot, Indent indent, String key, ObjectDiff objectDiff) {
+<span class="fc bfc" id="L140" title="All 2 branches covered.">        if (!objectDiff.isNull()) {</span>
+<span class="fc" id="L141">            ot.objectDiffStart(indent, key, objectDiff.getChangeStatus());</span>
+<span class="fc" id="L142">            printObjectDiff(ot, indent.incDefault(), objectDiff);</span>
+        }
+<span class="fc" id="L144">    }</span>
+
+    private void printObjectDiff(OutputSink ot, Indent indent, ObjectDiff objectDiff) {
+<span class="fc bfc" id="L147" title="All 2 branches covered.">        if (objectDiff.getChangeStatus() == ChangeStatus.ADDED) {</span>
+<span class="fc" id="L148">            printModel(ot, indent, objectDiff.getNewValue(), objectDiff.getChangeStatus());</span>
+<span class="fc bfc" id="L149" title="All 2 branches covered.">        } else if (objectDiff.getChangeStatus() == ChangeStatus.REMOVED) {</span>
+<span class="fc" id="L150">            printModel(ot, indent, objectDiff.getOldValue(), objectDiff.getChangeStatus());</span>
+        } else {
+<span class="fc" id="L152">            process(ot, objectDiff, indent);</span>
+        }
+<span class="fc" id="L154">    }</span>
+
+    private void printModel(OutputSink ot, Indent indent, Model model, ChangeStatus changeStatus) {
+        try {
+<span class="fc" id="L158">            Class&lt;? extends Model&gt; aClass = model.getClass();</span>
+<span class="fc" id="L159">            Field[] declaredFields = aClass.getDeclaredFields();</span>
+<span class="fc" id="L160">			boolean refField = printRefField(ot, indent, model, changeStatus, declaredFields);</span>
+<span class="fc bfc" id="L161" title="All 2 branches covered.">			if (!refField) {</span>
+<span class="fc bfc" id="L162" title="All 2 branches covered.">				for (Field field : declaredFields) {</span>
+<span class="fc" id="L163">					field.setAccessible(true);</span>
+<span class="fc" id="L164">					Class&lt;?&gt; type = field.getType();</span>
+<span class="fc" id="L165">					Object value = field.get(model);</span>
+<span class="fc bfc" id="L166" title="All 2 branches covered.">					if (value != null) {</span>
+<span class="fc bfc" id="L167" title="All 2 branches covered.">						if (String.class.isAssignableFrom(type)) {</span>
+<span class="fc" id="L168">							ot.stringDiff(indent, field.getName(), (String) value, changeStatus, null);</span>
+<span class="pc bpc" id="L169" title="1 of 2 branches missed.">						} else if (Integer.class.isAssignableFrom(type)) {</span>
+<span class="nc" id="L170">							ot.stringDiff(indent, field.getName(), value.toString(), changeStatus, null);</span>
+<span class="fc bfc" id="L171" title="All 2 branches covered.">						} else if (Map.class.isAssignableFrom(type)) {</span>
+<span class="fc" id="L172">							Map&lt;String, Object&gt; map = (Map&lt;String, Object&gt;) value;</span>
+<span class="pc bpc" id="L173" title="1 of 2 branches missed.">							for (Map.Entry&lt;String, Object&gt; entry : map.entrySet()) {</span>
+<span class="nc" id="L174">								Object entryValue = entry.getValue();</span>
+<span class="nc bnc" id="L175" title="All 2 branches missed.">								if (entryValue instanceof String) {</span>
+<span class="nc" id="L176">									ot.stringDiff(indent, entry.getKey(), (String) entryValue, changeStatus, null);</span>
+<span class="nc bnc" id="L177" title="All 2 branches missed.">								} else if (entryValue instanceof Model) {</span>
+<span class="nc" id="L178">									ot.stringDiff(indent, entry.getKey(), entryValue.toString(), changeStatus, null);</span>
+<span class="nc" id="L179">									printModel(ot, indent.incDefault(), (Model) entryValue, changeStatus);</span>
+								}
+<span class="nc" id="L181">							}</span>
+<span class="pc bpc" id="L182" title="1 of 2 branches missed.">						} else if (List.class.isAssignableFrom(type)) {</span>
+<span class="fc" id="L183">							List list = (List) value;</span>
+<span class="pc bpc" id="L184" title="1 of 2 branches missed.">							if (!list.isEmpty()) {</span>
+<span class="nc" id="L185">								Object o = list.get(0);</span>
+<span class="nc bnc" id="L186" title="All 2 branches missed.">								if (o instanceof String) {</span>
+<span class="nc" id="L187">									ot.listDiffStart(indent, field.getName(), changeStatus);</span>
+<span class="nc bnc" id="L188" title="All 2 branches missed.">									for (Object s : list) {</span>
+<span class="nc" id="L189">										ot.listDiffEntryString(indent, s, changeStatus, null);</span>
+<span class="nc" id="L190">									}</span>
+<span class="nc bnc" id="L191" title="All 2 branches missed.">								} else if (o instanceof Model) {</span>
+<span class="nc" id="L192">									ot.listDiffStart(indent, field.getName(), changeStatus);</span>
+<span class="nc bnc" id="L193" title="All 2 branches missed.">									for (Object m : list) {</span>
+<span class="nc" id="L194">										ot.listDiffEntryMap(indent.incDefault());</span>
+<span class="nc" id="L195">										printModel(ot, indent.incDefault().incListIndent().nextTimeNoIndent(), (Model) m, ChangeStatus.ADDED);</span>
+<span class="nc" id="L196">									}</span>
+								}
+							}
+						}
+					}
+				}
+			}
+<span class="nc" id="L203">        } catch (SecurityException | IllegalAccessException e) {</span>
+<span class="nc" id="L204">            throw new JAsyncApiCmpTechnicalException(&quot;Failed to access field: &quot; + e.getMessage(), e);</span>
+<span class="fc" id="L205">        }</span>
+<span class="fc" id="L206">    }</span>
+
+	private static boolean printRefField(OutputSink ot, Indent indent, Model model, ChangeStatus changeStatus, Field[] declaredFields) throws IllegalAccessException {
+<span class="fc" id="L209">		boolean refField = false;</span>
+<span class="fc bfc" id="L210" title="All 2 branches covered.">		for (Field field : declaredFields) {</span>
+<span class="fc bfc" id="L211" title="All 2 branches covered.">			if (&quot;ref&quot;.equals(field.getName())) {</span>
+<span class="fc" id="L212">				field.setAccessible(true);</span>
+<span class="fc" id="L213">				Object value = field.get(model);</span>
+<span class="pc bpc" id="L214" title="1 of 4 branches missed.">				refField = value instanceof String &amp;&amp; !((String) value).isEmpty();</span>
+<span class="fc bfc" id="L215" title="All 2 branches covered.">				if (refField) {</span>
+<span class="fc" id="L216">					ot.stringDiff(indent, field.getName(), (String) value, changeStatus, null);</span>
+<span class="fc" id="L217">					break;</span>
+				}
+			}
+		}
+<span class="fc" id="L221">		return refField;</span>
+	}
+
+	private void printStringDiff(OutputSink ot, Indent indent, String key, StringDiff value) {
+<span class="fc bfc" id="L225" title="All 2 branches covered.">        if (!value.isNull()) {</span>
+<span class="fc" id="L226">            ot.stringDiff(indent, key, value.getOldValue(), value.getNewValue(), value.getChangeStatus(), value);</span>
+        }
+<span class="fc" id="L228">    }</span>
+
+	private void printIntegerDiff(OutputSink ot, Indent indent, String name, IntegerDiff integerDiff) {
+<span class="nc bnc" id="L231" title="All 2 branches missed.">		if (!integerDiff.isNull()) {</span>
+<span class="nc" id="L232">			ot.integerDiff(indent, name, integerDiff.getOldValue(), integerDiff.getNewValue(), integerDiff.getChangeStatus(), integerDiff);</span>
+		}
+<span class="nc" id="L234">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
