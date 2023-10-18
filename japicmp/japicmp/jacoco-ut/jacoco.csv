@@ -82,7 +82,6 @@ japicmp,japicmp.compat,CompatibilityChanges.new CompatibilityChanges.OnSuperclas
 japicmp,japicmp.compat,CompatibilityChanges.new CompatibilityChanges.OnSuperclassCallback() {...},0,39,1,5,0,6,1,4,0,2
 japicmp,japicmp.compat,CompatibilityChanges.new CompatibilityChanges.OnSuperclassCallback() {...},0,91,4,16,0,12,4,8,0,2
 japicmp,japicmp.compat,CompatibilityChanges.new CompatibilityChanges.OnSuperclassCallback() {...},0,42,2,6,0,7,2,4,0,2
-japicmp,japicmp.compat,Test,3,0,0,0,1,0,1,0,1,0
 japicmp,japicmp.compat,CompatibilityChanges,166,2345,91,433,29,482,79,227,0,44
 japicmp,japicmp.config,Options,252,555,23,33,63,156,35,64,15,56
 japicmp,japicmp.config,IgnoreMissingClasses,0,57,0,8,0,18,0,10,0,6
